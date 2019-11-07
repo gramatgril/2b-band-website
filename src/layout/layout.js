@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useRef, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
 
@@ -7,22 +8,27 @@ import { theme } from "./theme";
 
 import Footer from "./Footer";
 import Header from "./Header";
-import Main from "./Main";
 
 const propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Fragment>
+const Layout = ({ children }) => {
+  if (typeof window === "undefined") {
+    global.window = {};
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
+
       <Header />
-      <Main>{children}</Main>
+
+      <main>{children}</main>
       <Footer />
-    </Fragment>
-  </ThemeProvider>
-);
+    </ThemeProvider>
+  );
+};
 
 Layout.propTypes = propTypes;
 

@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter`,
-    description: `Gatsby starter template`,
+    title: `2B Band`,
+    description: `Landing page za band 2B`,
     author: `@praecorloth`,
     image: `/image.jpg`,
     siteUrl: `https://www.google.com`,

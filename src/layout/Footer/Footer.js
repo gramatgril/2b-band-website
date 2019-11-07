@@ -11,4 +11,7 @@ const Footer = () => {
 
 export default Footer;
 
-const Wrapper = styled.footer``;
+const Wrapper = styled.footer`
+  height: 20vh;
+  background: black;
+`;
