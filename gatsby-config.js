@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Boilerplate`,
-    description: `Boilerplate project`,
+    title: `2B Band`,
+    description: `Landing page za band 2B`,
     author: `@praecorloth`,
     image: `/image.jpg`,
     siteUrl: `https://www.google.com`,
@@ -20,6 +20,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
@@ -42,9 +49,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-offline`,
-      options: {
-        // precachePages: [`/about-us/`, `/projects/*`],
-      },
+      options: {},
     },
   ],
 };
