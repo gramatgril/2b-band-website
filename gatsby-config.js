@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `2B Band`,
-    description: `Landing page za band 2B`,
+    title: `Boilerplate`,
+    description: `Boilerplate project`,
     author: `@praecorloth`,
     image: `/image.jpg`,
     siteUrl: `https://www.google.com`,

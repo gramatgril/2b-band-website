@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   background: #fff;
-  line-height: 1.4;
   font-size: 1rem;
 }
 
@@ -18,19 +17,6 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-p {
-  margin-bottom: 0;
-}
-
-
-.link {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
 }
 
 .img {
