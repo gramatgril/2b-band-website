@@ -12,7 +12,6 @@ const Contact = () => {
 export default Contact;
 
 const Wrapper = styled.div`
-  border: 1px solid purple;
   height: 100vh;
   display: grid;
   justify-content: center;

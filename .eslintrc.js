@@ -11,7 +11,7 @@ module.exports = {
   rules: {
     "consistent-return": 0,
     "no-console": 0,
-    "no-unused-vars": 1,
+    "no-unused-vars": 0,
     "no-unused-expressions": 0,
     "no-underscore-dangle": 0,
     "comma-dangle": 0,

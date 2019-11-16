@@ -88,6 +88,7 @@ const Page = () => {
 };
 
 export default Page;
+
 const StickyHeader = styled.nav``;
 
 const Wrapper = styled.div`
