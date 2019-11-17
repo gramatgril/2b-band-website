@@ -24,6 +24,7 @@ const TourDates = () => {
 
   return (
     <Wrapper>
+      <h1>Koncerti</h1>
       <TourGrid>
         {allShows.edges.map(({ node }) => {
           return <TourCard key={node.id} show={node} />;
@@ -41,6 +42,11 @@ const Wrapper = styled.div`
   border: 1px solid grey;
   text-align: center;
   background: ${({ theme }) => theme.offWhite};
+  height: 100vh;
+
+  h1 {
+    margin-top: 4rem;
+  }
 
   ${TourGrid} {
     margin: 0 auto;

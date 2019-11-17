@@ -4,12 +4,12 @@ import YoutubeEmbedVideo from "youtube-embed-video";
 
 const PromotedVideo = () => (
   <Wrapper>
-    {/* <StyledVideo
+    <StyledVideo
       videoId="uGGcdRKLkpo"
       suggestions={false}
       showInfo={false}
       controls={false}
-    /> */}
+    />
   </Wrapper>
 );
 

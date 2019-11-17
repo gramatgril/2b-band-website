@@ -16,9 +16,12 @@ const TourCard = ({ show }) => {
 
   return (
     <Wrapper>
-      <p>{date}</p>
-
-      <p>{`${location} - ${city} (${description})`}</p>
+      <Date>
+        <p>{date}</p>
+      </Date>
+      <TourInfo>
+        <p>{`${location} - ${city} (${description})`}</p>
+      </TourInfo>
     </Wrapper>
   );
 };
@@ -27,17 +30,20 @@ TourCard.propTypes = propTypes;
 
 export default TourCard;
 
+const Date = styled.div``;
+const TourInfo = styled.div``;
+
 const Wrapper = styled.article`
-  border: 1px solid ${({ theme }) => theme.primary};
+  border: 1px dashed ${({ theme }) => theme.grey[500]};
   display: block;
   text-align: left;
   padding: 1rem;
-  margin: 1rem 0;
-
   margin: 1rem auto;
+  width: 90vw;
 
   @media (min-width: 768px) {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 30%;
   }
 `;

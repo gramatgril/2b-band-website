@@ -49,7 +49,7 @@ const NavHeader = styled.div``;
 const Logo = styled.div``;
 
 const NavLinks = styled.ul`
-  height: ${({ isOpen }) => (isOpen ? "150px" : "0px")};
+  height: ${({ isOpen }) => (isOpen ? "100px" : "0px")};
 `;
 
 const NavButton = styled.button`
@@ -61,7 +61,6 @@ const NavButton = styled.button`
 const Wrapper = styled.nav`
   /*  === Mobile ===  */
   background: ${({ theme }) => theme.grey[300]};
-  border: 1px solid green;
 
   ${NavHeader} {
     padding-left: 1rem;
@@ -72,7 +71,6 @@ const Wrapper = styled.nav`
     ${Logo} {
       height: 2rem;
       width: 2rem;
-      border: 1px solid blue;
     }
 
     ${StyledMenuButton} {
@@ -80,16 +78,17 @@ const Wrapper = styled.nav`
   }
 
   ${NavLinks} {
-    margin: 0;
-    padding: 0 0.5rem;
-    transition: ${({ theme }) => theme.linear};
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
+    margin: 0 0.5rem 0.5rem;
+    padding: 0;
+    transition: ${({ theme }) => theme.easeInOut};
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: stretch;
+    flex-wrap: wrap;
     overflow: hidden;
 
     ${NavButton} {
-      border: 1px solid blue;
+      flex: 50%;
       cursor: pointer;
       border: none;
       outline: none;
@@ -108,7 +107,6 @@ const Wrapper = styled.nav`
       ${Logo} {
         height: 3rem;
         width: 3rem;
-        border: 1px solid blue;
       }
 
       ${StyledMenuButton} {
@@ -119,11 +117,12 @@ const Wrapper = styled.nav`
     ${NavLinks} {
       display: flex;
       flex-direction: row;
+      flex-wrap: nowrap;
       height: 100%;
-      border: 1px solid red;
       padding: 0;
 
       ${NavButton} {
+        flex: 100%;
         margin: 1rem;
         border: none;
         outline: none;
