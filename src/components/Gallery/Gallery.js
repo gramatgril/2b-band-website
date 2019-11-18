@@ -1,10 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
+import ImageGrid from "./ImageGrid";
+
+const getImages = graphql`
+  query {
+    gallery: allContentfulAsset {
+      edges {
+        node {
+          id
+          fluid(maxHeight: 600, maxWidth: 800, quality: 100) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Gallery = () => {
+  const { gallery } = useStaticQuery(getImages);
+
   return (
     <Wrapper>
-      <h1>Gallery</h1>
+      <ImageGrid images={gallery.edges} />
     </Wrapper>
   );
 };
@@ -12,9 +31,5 @@ const Gallery = () => {
 export default Gallery;
 
 const Wrapper = styled.div`
-  border: 1px solid purple;
-  height: 100vh;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
 `;

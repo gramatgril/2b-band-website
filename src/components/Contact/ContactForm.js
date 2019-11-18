@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useForm from "react-hook-form";
 import PropTypes from "prop-types";
 
-import { validators } from "../../../utils";
+import { validators } from "../../utils";
 const { nameValidation, emailValidation, messageValidation } = validators;
 
 const propTypes = {

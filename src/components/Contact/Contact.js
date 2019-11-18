@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ContactForm from "./ContactForm.js/ContactForm";
+import ContactForm from "./ContactForm.js";
 
 const Contact = () => {
   return (
@@ -37,11 +37,11 @@ const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  /* @media (min-width: 900px) {
     ${Panels} {
       width: 60w;
     }
-  }
+  } */
 
   @media (min-width: 1200px) {
     ${Panels} {
