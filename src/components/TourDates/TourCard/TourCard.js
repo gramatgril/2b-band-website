@@ -4,15 +4,14 @@ import PropTypes from "prop-types";
 
 const propTypes = {
   show: PropTypes.shape({
-    location: PropTypes.string.isRequired,
+    venue: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    description: PropTypes.string,
   }),
 };
 
 const TourCard = ({ show }) => {
-  const { location, city, date, description } = show;
+  const { venue, city, date } = show;
 
   return (
     <Wrapper>
@@ -20,7 +19,7 @@ const TourCard = ({ show }) => {
         <p>{date}</p>
       </Date>
       <TourInfo>
-        <p>{`${location} - ${city} (${description})`}</p>
+        <p>{`${venue} - ${city}`}</p>
       </TourInfo>
     </Wrapper>
   );

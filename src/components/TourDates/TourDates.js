@@ -10,9 +10,8 @@ const getTourDates = graphql`
         node {
           id: contentful_id
           city
-          location
+          venue
           date(formatString: "DD MM YYYY")
-          description
         }
       }
     }
