@@ -2,16 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
-  return (
-    <Wrapper>
-      <h1>Footer</h1>
-    </Wrapper>
-  );
+  return <Wrapper></Wrapper>;
 };
 
 export default Footer;
 
 const Wrapper = styled.footer`
   height: 20vh;
-  background: lightblue;
+  background: grey;
 `;

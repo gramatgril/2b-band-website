@@ -8,7 +8,8 @@ const getImages = graphql`
     gallery: allContentfulAsset {
       edges {
         node {
-          id
+          title
+          id: contentful_id
           fluid(maxHeight: 600, maxWidth: 800, quality: 100) {
             ...GatsbyContentfulFluid_tracedSVG
           }
@@ -32,4 +33,5 @@ export default Gallery;
 
 const Wrapper = styled.div`
   width: 100vw;
+  height: 100vh;
 `;

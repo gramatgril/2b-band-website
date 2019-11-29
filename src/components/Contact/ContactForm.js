@@ -31,7 +31,7 @@ const ContactForm = ({ setFormStatus }) => {
             name="name"
             id="name"
             className="input-field"
-            placeholder="Jože Novak"
+            // placeholder="Jože Novak"
             ref={register(nameValidation)}
           />
         </FormField>
@@ -48,7 +48,7 @@ const ContactForm = ({ setFormStatus }) => {
             name="email"
             id="email"
             className="input-field"
-            placeholder="Jože.Novak@gmail.com"
+            // placeholder="Jože.Novak@gmail.com"
             ref={register(emailValidation)}
           />
         </FormField>
@@ -66,7 +66,7 @@ const ContactForm = ({ setFormStatus }) => {
             name="message"
             id="message"
             className="input-field"
-            placeholder="Pustite nam sporočilo"
+            // placeholder="Pustite nam sporočilo"
             ref={register(messageValidation)}
           />
         </FormField>

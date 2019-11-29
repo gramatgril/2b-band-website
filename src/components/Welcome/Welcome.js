@@ -20,7 +20,10 @@ const Welcome = () => {
   const { file } = useStaticQuery(getImage);
   return (
     <Wrapper>
-      <Hero img={file.image.fluid}>{/* <h1>Hey</h1> */}</Hero>
+      <h1>2b band placeholder</h1>
+      {/* <Hero img={file.image.fluid}>
+        <h1>Hey</h1>
+      </Hero> */}
     </Wrapper>
   );
 };
@@ -28,5 +31,8 @@ const Welcome = () => {
 export default Welcome;
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 `;

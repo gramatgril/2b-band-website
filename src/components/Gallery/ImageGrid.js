@@ -8,18 +8,18 @@ const propTypes = {
   images: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 
-// ReactModal.setAppElement("#main");
-
 const ImageGrid = ({ images }) => {
   return (
     <Wrapper>
       {images.map(({ node }) => (
         <Image key={node.id}>
-          <Img
-            fluid={node.fluid}
-            className="img"
-            imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
-          />
+          <Link to={`${node.title}`}>
+            <Img
+              fluid={node.fluid}
+              className="img"
+              imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
+            />
+          </Link>
         </Image>
       ))}
     </Wrapper>
