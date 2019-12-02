@@ -42,7 +42,7 @@ const Wrapper = styled.article`
   border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-
+   align-items: center;
 
 
 
@@ -50,22 +50,26 @@ const Wrapper = styled.article`
     ${Date},
     ${City},
     ${Venue} {
-      font-weight: 700;
-      font-size: 1.5rem;
+      font-weight: 500;
+      font-size: 1.25rem;
       p {
+        padding: 0.5rem 0;
         margin: 0 1rem;
         white-space: normal;
       }
     }
 
     ${Date} {
+      text-align: left;
       grid-column: 1 / -1;
       font-weight: 500;
       font-size: 1.25rem;
       color:  ${({ theme }) => theme.blue[500]};
       background: ${({ theme }) => theme.gold[500]};
       p {
-          white-space: nowrap;
+        padding: 0;
+        margin-bottom: 3px;
+        white-space: nowrap;
         }
     }
 
@@ -78,9 +82,7 @@ const Wrapper = styled.article`
       text-align: right;
        grid-column: 7 / 13;
        color:  ${({ theme }) => theme.gold[500]};
-       p {
 
-       }
     }
 
 
@@ -106,19 +108,25 @@ const Wrapper = styled.article`
       font-weight: 700;
       font-size: 1.5rem;
 
-       p {
+      p {
+        padding: 0.5rem 0;
         letter-spacing: 2px;
         white-space: normal;
       }
     }
 
     ${Date} {
-      height: 100%;
       text-align: center;
+      height: 100%;
       grid-column: 1 / 4;
       color:  ${({ theme }) => theme.blue[500]};
       background: ${({ theme }) => theme.gold[500]};
       border: 4px solid ${({ theme }) => theme.gold[500]};
+
+      p{
+           margin-bottom: 0;
+      }
+
     }
 
     ${Venue} {
@@ -130,6 +138,7 @@ const Wrapper = styled.article`
         grid-column: 9 / 13;
         color:  ${({ theme }) => theme.gold[500]};
        p {
+
          margin: 0 1rem 0 0;
        }
     }
