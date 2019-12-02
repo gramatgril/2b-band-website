@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   height: 100vh;
   text-align: center;
 
+
   h1 {
     margin-top: 4rem;
   }

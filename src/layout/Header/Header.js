@@ -8,7 +8,7 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.header`
-  width: 100vw;
+  /* width: 100vw; */
   height: 2rem;
   background: darkgray;
 `;

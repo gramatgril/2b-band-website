@@ -11,7 +11,7 @@ const getTourDates = graphql`
           id: contentful_id
           city
           venue
-          date(formatString: "DD MM YYYY")
+          date(formatString: "DD MMM YYYY")
         }
       }
     }
@@ -23,7 +23,6 @@ const TourDates = () => {
 
   return (
     <Wrapper>
-      <h1>Koncerti</h1>
       <TourGrid>
         {allShows.edges.map(({ node }) => {
           return <TourCard key={node.id} show={node} />;
@@ -38,20 +37,23 @@ export default TourDates;
 const TourGrid = styled.div``;
 
 const Wrapper = styled.div`
-  border: 1px solid grey;
+  border: 1px solid blue;
   text-align: center;
-  background: ${({ theme }) => theme.offWhite};
-  height: 100vh;
-
-  h1 {
-    margin-top: 4rem;
-  }
 
   ${TourGrid} {
     margin: 0 auto;
-    padding: 5rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 90vw;
+  }
+
+  @media (min-width: 900px) {
+    ${TourGrid} {
+      /* border: 1px solid red; */
+      margin: 0 auto;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60vw;
+    }
   }
 `;

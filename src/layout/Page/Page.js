@@ -12,9 +12,9 @@ import Welcome from "../../components/Welcome";
 const Page = () => {
   return (
     <Wrapper>
+      <TourDates />
       <Welcome />
       <PromotedVideo />
-      <TourDates />
       <Contact />
       <Discography />
       <Gallery />

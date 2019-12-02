@@ -6,12 +6,12 @@ const typography = new Typography({
   blockMarginBottom: "true",
   googleFonts: [
     {
-      name: "Roboto",
+      name: "Lato",
       styles: ["400", "500", "600", "700"],
     },
   ],
-  headerFontFamily: ["Roboto", "sans-serif"],
-  bodyFontFamily: ["Roboto", "sans-serif"],
+  headerFontFamily: ["Lato", "sans-serif"],
+  bodyFontFamily: ["Lato", "sans-serif"],
 });
 
 export default typography;
