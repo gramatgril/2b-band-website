@@ -23,36 +23,37 @@ const TourDates = () => {
 
   return (
     <Wrapper>
-      <TourGrid>
+      <TourDatesGrid>
         {allShows.edges.map(({ node }) => {
           return <TourCard key={node.id} show={node} />;
         })}
-      </TourGrid>
+      </TourDatesGrid>
     </Wrapper>
   );
 };
 
 export default TourDates;
 
-const TourGrid = styled.div``;
+const TourDatesGrid = styled.div``;
 
 const Wrapper = styled.section`
-  border: 1px solid blue;
-  text-align: center;
+  padding: 4rem 0;
 
-  ${TourGrid} {
+  ${TourDatesGrid} {
+    display: grid;
     margin: 0 auto;
     width: 90vw;
+    grid-gap: 2rem;
+  }
+
+  @media (min-width: 576px) {
+    ${TourDatesGrid} {
+      width: 70vw;
+    }
   }
 
   @media (min-width: 900px) {
-    ${TourGrid} {
-      /* border: 1px solid red; */
-      margin: 0 auto;
-      padding: 2rem 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    ${TourDatesGrid} {
       width: 60vw;
     }
   }

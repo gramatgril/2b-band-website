@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import {
   FaYoutube,
   FaSoundcloud,
@@ -9,49 +10,57 @@ import {
   FaBandcamp,
 } from "react-icons/fa";
 
-const DiscoItem = () => {
+const DiscoItem = ({ album }) => {
+  const {
+    title,
+    date,
+    image,
+    youtubeLink,
+    soundcloudLink,
+    appleLink,
+    spotifyLink,
+    bandcampLink,
+  } = album;
+
   return (
     <Wrapper>
       <ImageContainer>
-        <img
-          src="https://source.unsplash.com/random/300x300"
-          alt=""
+        <Img
+          fluid={image.fluid}
+          alt={title}
           className="img"
+          imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
       </ImageContainer>
-      <Title>Morje z nami</Title>
-      <Date>24.12.2019</Date>
+      <Title>{title}</Title>
+      <Date>{date}</Date>
       <Icons>
         <AnchorLink
-          href="https://www.youtube.com/"
+          href={youtubeLink}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaYoutube className="icon" />
         </AnchorLink>
         <AnchorLink
-          href="https://www.youtube.com/"
+          href={soundcloudLink}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaSoundcloud className="icon" />
         </AnchorLink>
-        <AnchorLink
-          href="https://www.youtube.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <AnchorLink href={appleLink} target="_blank" rel="noopener noreferrer">
           <FaApple className="icon" />
         </AnchorLink>
         <AnchorLink
-          href="https://www.youtube.com/"
+          href={spotifyLink}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaSpotify className="icon" />
         </AnchorLink>
         <AnchorLink
-          href="https://www.youtube.com/"
+          href={bandcampLink}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -76,6 +85,8 @@ const Wrapper = styled.article`
   text-align: center;
 
   ${ImageContainer} {
+    height: 256px;
+    width: 256px;
     border: 2px solid ${({ theme }) => theme.gold[600]};
     border-radius: 8px;
     overflow: hidden;
@@ -83,9 +94,8 @@ const Wrapper = styled.article`
 
   ${Title} {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
-    margin-bottom: 0.25rem;
   }
 
   ${Date} {

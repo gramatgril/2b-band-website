@@ -12,8 +12,8 @@ import Welcome from "../../components/Welcome";
 const Page = () => {
   return (
     <Wrapper>
-      <Discography />
       <TourDates />
+      <Discography />
       <Welcome />
       <PromotedVideo />
       <Contact />

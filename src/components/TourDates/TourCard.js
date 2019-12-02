@@ -38,59 +38,45 @@ const Venue = styled.div``;
 
 const Wrapper = styled.article`
 /* === MOBILE ===  */
-  text-align: center;
   border: 3px solid ${({ theme }) => theme.gold[500]};
   border-radius: 8px;
-  margin: 2rem 0;
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr 2fr;
-  justify-content: center;
-  overflow: hidden;
+  grid-template-columns: repeat(12, 1fr);
+
+
 
 
 
     ${Date},
     ${City},
     ${Venue} {
-      min-height: 2rem;
-      padding: 0 0.5rem;
-      display: flex;
-      justify-content:flex-end;
-      align-items: center;
-      font-weight: 500;
-      font-size: 1rem;
-      /* font-style: italic; */
-      /* text-shadow:  ${({ theme }) => theme.textShadow}; */
-
+      font-weight: 700;
+      font-size: 1.5rem;
       p {
-
+        margin: 0 1rem;
         white-space: normal;
       }
     }
 
     ${Date} {
-      /* justify-content: flex-end; */
+      grid-column: 1 / -1;
+      font-weight: 500;
+      font-size: 1.25rem;
       color:  ${({ theme }) => theme.blue[500]};
       background: ${({ theme }) => theme.gold[500]};
-      /* text-shadow: #21252a 1px 1px 0, 2px 2px 2px rgba(206,89,55,0); */
-      transform: skew(-20deg);
-      margin: 0 0 0 -2rem;
-      /* box-shadow:  ${({ theme }) => theme.textShadow}; */
-
       p {
-          transform: skew(20deg);
-          margin: 0 2rem;
           white-space: nowrap;
         }
-
     }
 
     ${Venue} {
-       color:  ${({ theme }) => theme.gold[500]};
+      grid-column: 1 / 7;
+      color:  ${({ theme }) => theme.gold[500]};
     }
 
     ${City} {
+      text-align: right;
+       grid-column: 7 / 13;
        color:  ${({ theme }) => theme.gold[500]};
        p {
 
@@ -105,58 +91,44 @@ const Wrapper = styled.article`
 
 /* === DESKTOP ===  */
   @media (min-width: 900px) {
-    /* box-shadow: ${({ theme }) => theme.boxShadow}; */
     border: 4px solid ${({ theme }) => theme.gold[500]};
-    min-height: 4rem;
-    margin: 2rem 0;
     border-radius: 8px;
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr;
-    justify-content: center;
-    overflow: hidden;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    text-align: right;
+
 
 
     ${Date},
     ${City},
     ${Venue} {
-      padding: 0 1rem;
-      display: flex;
-      justify-content:flex-end;
-      align-items: center;
       font-weight: 700;
       font-size: 1.5rem;
-      font-style: italic;
-      /* text-shadow:  ${({ theme }) => theme.textShadow}; */
 
-      p {
+       p {
         letter-spacing: 2px;
         white-space: normal;
       }
     }
 
     ${Date} {
-      justify-content: center;
+      height: 100%;
+      text-align: center;
+      grid-column: 1 / 4;
       color:  ${({ theme }) => theme.blue[500]};
       background: ${({ theme }) => theme.gold[500]};
-      /* text-shadow: #21252a 1px 1px 0, 2px 2px 2px rgba(206,89,55,0); */
-      transform: skew(-20deg);
-      margin: 0 0 0 -2rem;
-      /* box-shadow:  ${({ theme }) => theme.textShadow}; */
-
-      p {
-          transform: skew(20deg);
-          margin: 0 2rem;
-          white-space: nowrap;
-        }
-
+      border: 4px solid ${({ theme }) => theme.gold[500]};
     }
 
     ${Venue} {
-       color:  ${({ theme }) => theme.gold[500]};
+      grid-column: 4 / 9;
+      color:  ${({ theme }) => theme.gold[500]};
     }
 
     ${City} {
-       color:  ${({ theme }) => theme.gold[500]};
+        grid-column: 9 / 13;
+        color:  ${({ theme }) => theme.gold[500]};
        p {
          margin: 0 1rem 0 0;
        }
