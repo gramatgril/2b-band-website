@@ -59,12 +59,12 @@ const Wrapper = styled.article`
       justify-content:flex-end;
       align-items: center;
       font-weight: 500;
-      font-size: 0.75rem;
-      font-style: italic;
+      font-size: 1rem;
+      /* font-style: italic; */
       /* text-shadow:  ${({ theme }) => theme.textShadow}; */
 
       p {
-        letter-spacing: 1px;
+
         white-space: normal;
       }
     }

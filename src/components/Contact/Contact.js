@@ -17,7 +17,7 @@ export default Contact;
 
 const Panels = styled.div``;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   border: 1px dashed red;
   height: 100vh;
   text-align: center;

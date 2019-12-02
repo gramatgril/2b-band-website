@@ -12,11 +12,11 @@ import Welcome from "../../components/Welcome";
 const Page = () => {
   return (
     <Wrapper>
+      <Discography />
       <TourDates />
       <Welcome />
       <PromotedVideo />
       <Contact />
-      <Discography />
       <Gallery />
     </Wrapper>
   );

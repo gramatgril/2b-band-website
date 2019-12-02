@@ -17,7 +17,7 @@ export default PromotedVideo;
 
 const StyledVideo = styled(YoutubeEmbedVideo)``;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   /* == Mobile ===  */
   display: flex;
   justify-content: center;

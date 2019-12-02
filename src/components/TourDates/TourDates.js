@@ -36,7 +36,7 @@ export default TourDates;
 
 const TourGrid = styled.div``;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   border: 1px solid blue;
   text-align: center;
 

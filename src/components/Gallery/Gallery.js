@@ -31,6 +31,6 @@ const Gallery = () => {
 
 export default Gallery;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   height: 100vh;
 `;
