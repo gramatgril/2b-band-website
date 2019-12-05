@@ -4,19 +4,22 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 
 export default ({ data }) => {
+  const { image, title } = data.asset;
   return (
     <Wrapper>
-      <Img fluid={data.image.fluid} />
+      <Img fluid={image.fluid} alt={title} />
     </Wrapper>
   );
 };
 
 export const query = graphql`
   query($id: String!) {
-    image: contentfulAsset(contentful_id: { eq: $id }) {
+    asset: contentfulSlika(contentful_id: { eq: $id }) {
       title
-      fluid(quality: 100) {
-        ...GatsbyContentfulFluid_tracedSVG
+      image {
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
       }
     }
   }

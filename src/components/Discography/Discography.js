@@ -38,6 +38,22 @@ const Discography = () => {
           albums.edges.map(({ node }) => (
             <DiscoItem key={node.id} album={node} />
           ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
       </DiscographyGrid>
     </Wrapper>
   );
@@ -61,5 +77,8 @@ const Wrapper = styled.section`
 
   @media (min-width: 576px) {
     width: 60vw;
+  }
+  @media (min-width: 2000px) {
+    width: 50vw;
   }
 `;

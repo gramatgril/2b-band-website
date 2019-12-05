@@ -4,11 +4,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const { data } = await graphql(`
     {
-      images: allContentfulAsset {
+      images: allContentfulSlika {
         edges {
           node {
-            title
-            contentful_id
+            slug
+            id: contentful_id
           }
         }
       }
@@ -17,9 +17,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   data.images.edges.forEach(({ node }) => {
     createPage({
-      path: `/${node.title}`,
+      path: `/${node.slug}`,
       component: path.resolve("./src/templates/single-image-template.js"),
-      context: { id: node.contentful_id },
+      context: { id: node.id },
     });
   });
 };

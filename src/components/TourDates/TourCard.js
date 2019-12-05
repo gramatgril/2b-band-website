@@ -38,18 +38,18 @@ const Venue = styled.div``;
 
 const Wrapper = styled.article`
 /* === MOBILE ===  */
-  border: 3px solid ${({ theme }) => theme.gold[500]};
+  border: 2px solid ${({ theme }) => theme.gold[500]};
+  /* box-shadow: ${({ theme }) => theme.boxShadow}; */
   border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-   align-items: center;
-
-
-
+  align-items: center;
+  background: ${({ theme }) => theme.blue[500]};
 
     ${Date},
     ${City},
     ${Venue} {
+      /* text-shadow: 0px 1px 1px rgba(33,37,42,0.8); */
       font-weight: 500;
       font-size: 1.25rem;
       p {
@@ -86,14 +86,10 @@ const Wrapper = styled.article`
     }
 
 
-
-
-
-
-
-/* === DESKTOP ===  */
+  /* === DESKTOP ===  */
   @media (min-width: 900px) {
-    border: 4px solid ${({ theme }) => theme.gold[500]};
+
+    border: 2px solid ${({ theme }) => theme.gold[500]};
     border-radius: 8px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -109,6 +105,7 @@ const Wrapper = styled.article`
       font-size: 1.5rem;
 
       p {
+
         padding: 0.5rem 0;
         letter-spacing: 2px;
         white-space: normal;
@@ -116,6 +113,7 @@ const Wrapper = styled.article`
     }
 
     ${Date} {
+
       text-align: center;
       height: 100%;
       grid-column: 1 / 4;
@@ -126,6 +124,8 @@ const Wrapper = styled.article`
       p{
            margin-bottom: 0;
       }
+
+
 
     }
 

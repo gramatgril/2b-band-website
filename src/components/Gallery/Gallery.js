@@ -1,17 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-import ImageGrid from "./ImageGrid";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
 
 const getImages = graphql`
   query {
-    gallery: allContentfulAsset {
+    gallery: allContentfulSlika {
       edges {
         node {
-          title
           id: contentful_id
-          fluid(maxHeight: 600, maxWidth: 800, quality: 100) {
-            ...GatsbyContentfulFluid_tracedSVG
+          title
+          slug
+          image {
+            fluid(quality: 100) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
           }
         }
       }
@@ -24,13 +28,74 @@ const Gallery = () => {
 
   return (
     <Wrapper>
-      <ImageGrid images={gallery.edges} />
+      <GalleryGrid>
+        {gallery.edges.map(({ node }) => (
+          <Image key={node.id}>
+            <Link to={`/${node.slug}`}>
+              <Img
+                fluid={node.image.fluid}
+                className="img"
+                imgStyle={{
+                  objectFit: "cover",
+                  objectPosition: "50% 50%",
+                }}
+                title={node.title}
+                alt={node.title}
+              />
+            </Link>
+          </Image>
+        ))}
+      </GalleryGrid>
     </Wrapper>
   );
 };
 
 export default Gallery;
 
+const GalleryGrid = styled.div``;
+const Image = styled.div``;
+
 const Wrapper = styled.section`
-  height: 100vh;
+  /* == MOBILE == */
+  width: 100vw;
+
+  ${GalleryGrid} {
+    width: 100vw;
+    padding: 2rem 0.5rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    grid-gap: 0.5rem;
+
+    ${Image} {
+      border: 1px solid ${({ theme }) => theme.gold[300]};
+      /* box-shadow: ${({ theme }) => theme.boxShadow}; */
+
+      transition: transform 0.5s ease;
+      overflow: hidden;
+
+      .img {
+        transition: transform 1s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  /* == DESKTOP == */
+  @media (min-width: 1200px) {
+    ${GalleryGrid} {
+      padding: 2rem 0;
+      width: 60vw;
+    }
+  }
+  @media (min-width: 2000px) {
+    ${GalleryGrid} {
+      width: 50vw;
+    }
+  }
+
+
 `;

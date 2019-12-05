@@ -11,7 +11,7 @@ export const theme = {
     100: `#bedef8`,
     300: `#7dbcf2`,
     500: `#105b9a`,
-    700: `#0d4c81`,
+    700: `#0f5086`,
     900: `#062037`,
   },
   grey: {
@@ -21,9 +21,14 @@ export const theme = {
     700: `#495057`,
     900: `#21252a`,
   },
+  warning: {
+    500: `#EB5757`,
+  },
   white: `#fff`,
-  boxShadow: `2px 1px 2px 1px #21252a, inset 2px 1px 2px 1px #21252a, 3px 3px 1px -1px #21252a`,
-  textShadow: `2px 2px 1px #21252a`,
+
+  // boxShadow: `3px 3px 5px 2px rgba(33,37,42,0.8)`,
+  boxShadow: `0 0 10px rgba(33,37,42,0.8)`,
+  textShadow: `0 10px 10px -5px`,
   linear: `all 0.3s linear`,
   easeInOut: `all 0.3s ease-in-out`,
   letterSpacing: `2px`,

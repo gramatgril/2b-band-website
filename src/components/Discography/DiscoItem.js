@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
@@ -9,6 +10,19 @@ import {
   FaSpotify,
   FaBandcamp,
 } from "react-icons/fa";
+
+const propTypes = {
+  album: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    youtubeLink: PropTypes.string,
+    soundcloudLink: PropTypes.string,
+    appleLink: PropTypes.string,
+    spotifyLink: PropTypes.string,
+    bandcampLink: PropTypes.string,
+  }).isRequired,
+};
 
 const DiscoItem = ({ album }) => {
   const {
@@ -71,6 +85,8 @@ const DiscoItem = ({ album }) => {
   );
 };
 
+DiscoItem.propTypes = propTypes;
+
 export default DiscoItem;
 
 const ImageContainer = styled.div``;
@@ -83,22 +99,26 @@ const Wrapper = styled.article`
   margin: 0 auto;
   color: ${({ theme }) => theme.gold[500]};
   text-align: center;
+  background: ${({ theme }) => theme.blue[500]};
+  overflow: hidden;
+  border: 2px solid ${({ theme }) => theme.gold[300]};
+  border-radius: 8px;
+  /* box-shadow: ${({ theme }) => theme.boxShadow}; */
 
   ${ImageContainer} {
     height: 256px;
     width: 256px;
-    border: 2px solid ${({ theme }) => theme.gold[600]};
-    border-radius: 8px;
-    overflow: hidden;
   }
 
   ${Title} {
+    /* text-shadow: 0px 1px 1px rgba(33, 37, 42, 0.8); */
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
   }
 
   ${Date} {
+    /* text-shadow: 0px 1px 1px rgba(33, 37, 42, 0.8); */
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: ${({ theme }) => theme.gold[600]};

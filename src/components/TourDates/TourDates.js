@@ -57,4 +57,10 @@ const Wrapper = styled.section`
       width: 60vw;
     }
   }
+
+  @media (min-width: 2000px) {
+    ${TourDatesGrid} {
+      width: 50vw;
+    }
+  }
 `;
