@@ -4,6 +4,9 @@ import useForm from "react-hook-form";
 
 import { validators } from "../../utils";
 import FormStatusMessage from "./FormStatusMessage";
+import { StyledButton } from "../../styles/StyledComponents";
+import { StyledTitle } from "./../../styles/StyledComponents";
+import { StyledFrame } from "./../../styles/StyledComponents";
 const { nameValidation, emailValidation, messageValidation } = validators;
 
 const ContactForm = () => {
@@ -22,80 +25,82 @@ const ContactForm = () => {
       <Title>
         <h2>Kontakt</h2>
       </Title>
-      {formStatus.statusCode ? (
-        <FormStatusMessage message={formStatus.msg} />
-      ) : (
-        <FormField
-          className="form"
-          name="contact"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <FormField>
-            <LabelRow className="top-line">
-              <label htmlFor="name">Ime</label>
-              {errors.name && <ErrorText>{errors.name.message}</ErrorText>}
-            </LabelRow>
-            <Input
-              autoComplete="off"
-              type="text"
-              name="name"
-              id="name"
-              className="input-field"
-              // placeholder="Jože Novak"
-              ref={register(nameValidation)}
-            />
+      <Form>
+        {formStatus.statusCode ? (
+          <FormStatusMessage message={formStatus.msg} />
+        ) : (
+          <FormField
+            className="form"
+            name="contact"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <FormField>
+              <LabelRow className="top-line">
+                <label htmlFor="name">Ime</label>
+                {errors.name && <ErrorText>{errors.name.message}</ErrorText>}
+              </LabelRow>
+              <Input
+                autoComplete="off"
+                type="text"
+                name="name"
+                id="name"
+                className="input-field"
+                // placeholder="Jože Novak"
+                ref={register(nameValidation)}
+              />
+            </FormField>
+            <FormField>
+              <LabelRow className="top-line">
+                <label htmlFor="email">Email</label>
+                {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
+              </LabelRow>
+              <Input
+                autoComplete="off"
+                type="text"
+                name="email"
+                id="email"
+                className="input-field"
+                // placeholder="Jože.Novak@gmail.com"
+                ref={register(emailValidation)}
+              />
+            </FormField>
+            <FormField>
+              <LabelRow className="top-line">
+                <label htmlFor="message">Sporočilo</label>
+                {errors.message && (
+                  <ErrorText>{errors.message.message}</ErrorText>
+                )}
+              </LabelRow>
+              <TextArea
+                autoComplete="off"
+                type="email"
+                rows="10"
+                name="message"
+                id="message"
+                className="input-field"
+                // placeholder="Pustite nam sporočilo"
+                ref={register(messageValidation)}
+              />
+            </FormField>
+            <FormField>
+              <TextArea
+                autoComplete="off"
+                type="text"
+                name="phone"
+                id="phone"
+                className="form-control phone"
+                placeholder="Telefon"
+                ref={register}
+              />
+            </FormField>
+            <FormField>
+              <SubmitButton type="submit" className="submit-button">
+                Pošlji sporočilo
+              </SubmitButton>
+            </FormField>
           </FormField>
-          <FormField>
-            <LabelRow className="top-line">
-              <label htmlFor="email">Email</label>
-              {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
-            </LabelRow>
-            <Input
-              autoComplete="off"
-              type="text"
-              name="email"
-              id="email"
-              className="input-field"
-              // placeholder="Jože.Novak@gmail.com"
-              ref={register(emailValidation)}
-            />
-          </FormField>
-          <FormField>
-            <LabelRow className="top-line">
-              <label htmlFor="message">Sporočilo</label>
-              {errors.message && (
-                <ErrorText>{errors.message.message}</ErrorText>
-              )}
-            </LabelRow>
-            <TextArea
-              autoComplete="off"
-              type="email"
-              rows="5"
-              name="message"
-              id="message"
-              className="input-field"
-              // placeholder="Pustite nam sporočilo"
-              ref={register(messageValidation)}
-            />
-          </FormField>
-          <FormField>
-            <TextArea
-              autoComplete="off"
-              type="text"
-              name="phone"
-              id="phone"
-              className="form-control phone"
-              placeholder="Telefon"
-              ref={register}
-            />
-          </FormField>
-          <FormField>
-            <SubmitButton type="submit" className="submit-button">
-              Pošlji sporočilo
-            </SubmitButton>
-          </FormField>
-        </FormField>
-      )}
+        )}
+      </Form>
     </Wrapper>
   );
 };
@@ -107,29 +112,26 @@ const LabelRow = styled.div``;
 const ErrorText = styled.p``;
 const Input = styled.input``;
 const TextArea = styled.textarea``;
-const SubmitButton = styled.button``;
 const FormField = styled.div``;
-const Title = styled.div``;
+const Title = styled(StyledTitle)``;
+const SubmitButton = styled(StyledButton)``;
 
-const Wrapper = styled.div`
-  margin: 1.5rem 0;
-  border: 2px solid ${({ theme }) => theme.gold[300]};
+const Wrapper = styled(StyledFrame)`
+  /* height: 100%; */
+  margin: 0;
+  /* border: 2px solid ${({ theme }) => theme.gold[300]}; */
   border-radius: 8px;
   padding: 1rem;
-  background: ${({ theme }) => theme.blue[500]};
+  /* background: ${({ theme }) => theme.blue[500]}; */
 
-  ${Title} {
-    h2 {
-      color: ${({ theme }) => theme.gold[300]};
-      letter-spacing: 2px;
-      font-weight: 500;
-      padding: 0 0 1rem 0;
-    }
+  ${Form} {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
   }
 
   ${FormField} {
-    color: ${({ theme }) => theme.gold[300]};
-    /* text-shadow: 0px 1px 1px rgba(33, 37, 42, 0.8); */
+    /* color: ${({ theme }) => theme.gold[300]}; */
     letter-spacing: 1px;
     font-weight: 500;
 
@@ -155,29 +157,6 @@ const Wrapper = styled.div`
       font-weight: 400;
       color: ${({ theme }) => theme.gold[500]};
       border-bottom: 1px solid ${({ theme }) => theme.gold[500]};
-    }
-
-    ${SubmitButton} {
-      margin: 1rem 0;
-      text-transform: uppercase;
-      transition: ${({ theme }) => theme.linear};
-      cursor: pointer;
-      background: transparent;
-      padding: 0.5rem 1.5rem;
-      font-size: 1.25rem;
-      border-radius: 12px;
-      border: 2px solid ${({ theme }) => theme.gold[500]};
-      color: ${({ theme }) => theme.gold[500]};
-      letter-spacing: 1px;
-
-      &:hover {
-        background: ${({ theme }) => theme.blue[700]};
-      }
-
-      &:active {
-        color: ${({ theme }) => theme.gold[300]};
-        background: ${({ theme }) => theme.blue[300]};
-      }
     }
 
     .phone {

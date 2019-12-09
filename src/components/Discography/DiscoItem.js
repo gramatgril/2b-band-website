@@ -97,31 +97,30 @@ const AnchorLink = styled.a``;
 
 const Wrapper = styled.article`
   margin: 0 auto;
-  color: ${({ theme }) => theme.gold[500]};
+  color: ${({ theme }) => theme.white};
   text-align: center;
-  background: ${({ theme }) => theme.blue[500]};
-  overflow: hidden;
-  border: 2px solid ${({ theme }) => theme.gold[300]};
-  border-radius: 8px;
-  /* box-shadow: ${({ theme }) => theme.boxShadow}; */
 
   ${ImageContainer} {
     height: 256px;
     width: 256px;
+    overflow: hidden;
+
+    .img {
+      border: 2px solid ${({ theme }) => theme.gold[300]};
+      border-radius: 8px;
+    }
   }
 
   ${Title} {
-    /* text-shadow: 0px 1px 1px rgba(33, 37, 42, 0.8); */
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
   }
 
   ${Date} {
-    /* text-shadow: 0px 1px 1px rgba(33, 37, 42, 0.8); */
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: ${({ theme }) => theme.gold[600]};
+    color: ${({ theme }) => theme.white};
   }
 
   ${Icons} {
@@ -136,7 +135,7 @@ const Wrapper = styled.article`
         transition: ${({ theme }) => theme.linear};
 
         &:hover {
-          color: ${({ theme }) => theme.gold[300]};
+          color: ${({ theme }) => theme.gold[700]};
         }
       }
     }

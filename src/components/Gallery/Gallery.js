@@ -68,9 +68,7 @@ const Wrapper = styled.section`
     grid-gap: 0.5rem;
 
     ${Image} {
-      border: 1px solid ${({ theme }) => theme.gold[300]};
-      /* box-shadow: ${({ theme }) => theme.boxShadow}; */
-
+      border: 1px solid ${({ theme }) => theme.gold[500]};
       transition: transform 0.5s ease;
       overflow: hidden;
 
@@ -91,11 +89,10 @@ const Wrapper = styled.section`
       width: 60vw;
     }
   }
+
   @media (min-width: 2000px) {
     ${GalleryGrid} {
       width: 50vw;
     }
   }
-
-
 `;

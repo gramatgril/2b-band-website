@@ -12,18 +12,16 @@ import Welcome from "../../components/Welcome";
 const Page = () => {
   return (
     <Wrapper>
-      <Contact />
-      <PromotedVideo />
-      <TourDates />
+      {/* <TourDates />
       <Discography />
       <Gallery />
       <Welcome />
+      <PromotedVideo />
+      <Contact /> */}
     </Wrapper>
   );
 };
 
 export default Page;
-
-const StickyHeader = styled.nav``;
 
 const Wrapper = styled.div``;

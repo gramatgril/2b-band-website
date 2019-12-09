@@ -37,24 +37,22 @@ const City = styled.div``;
 const Venue = styled.div``;
 
 const Wrapper = styled.article`
-/* === MOBILE ===  */
-  border: 2px solid ${({ theme }) => theme.gold[500]};
-  /* box-shadow: ${({ theme }) => theme.boxShadow}; */
-  border-radius: 8px;
+  border-bottom: 2px solid ${({ theme }) => theme.gold[500]};
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
-  background: ${({ theme }) => theme.blue[500]};
 
     ${Date},
     ${City},
     ${Venue} {
-      /* text-shadow: 0px 1px 1px rgba(33,37,42,0.8); */
-      font-weight: 500;
-      font-size: 1.25rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color:  ${({ theme }) => theme.white};
+
       p {
+        letter-spacing: 1px;
         padding: 0.5rem 0;
-        margin: 0 1rem;
+        margin: 0;
         white-space: normal;
       }
     }
@@ -63,49 +61,37 @@ const Wrapper = styled.article`
       text-align: left;
       grid-column: 1 / -1;
       font-weight: 500;
-      font-size: 1.25rem;
-      color:  ${({ theme }) => theme.blue[500]};
-      background: ${({ theme }) => theme.gold[500]};
+      color:  ${({ theme }) => theme.gold[500]};
       p {
-        padding: 0;
-        margin-bottom: 3px;
-        white-space: nowrap;
+          padding: 0;
+          white-space: nowrap;
         }
     }
 
     ${Venue} {
       grid-column: 1 / 7;
-      color:  ${({ theme }) => theme.gold[500]};
     }
 
     ${City} {
       text-align: right;
        grid-column: 7 / 13;
-       color:  ${({ theme }) => theme.gold[500]};
-
     }
 
 
-  /* === DESKTOP ===  */
   @media (min-width: 900px) {
-
-    border: 2px solid ${({ theme }) => theme.gold[500]};
-    border-radius: 8px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     text-align: right;
-
-
 
     ${Date},
     ${City},
     ${Venue} {
       font-weight: 700;
       font-size: 1.5rem;
+      color:  ${({ theme }) => theme.white};
 
       p {
-
         padding: 0.5rem 0;
         letter-spacing: 2px;
         white-space: normal;
@@ -113,35 +99,18 @@ const Wrapper = styled.article`
     }
 
     ${Date} {
-
-      text-align: center;
+      text-align: left;
       height: 100%;
       grid-column: 1 / 4;
-      color:  ${({ theme }) => theme.blue[500]};
-      background: ${({ theme }) => theme.gold[500]};
-      border: 4px solid ${({ theme }) => theme.gold[500]};
-
-      p{
-           margin-bottom: 0;
-      }
-
-
-
+      color:  ${({ theme }) => theme.gold[500]};
     }
 
     ${Venue} {
       grid-column: 4 / 9;
-      color:  ${({ theme }) => theme.gold[500]};
     }
 
     ${City} {
         grid-column: 9 / 13;
-        color:  ${({ theme }) => theme.gold[500]};
-       p {
-
-         margin: 0 1rem 0 0;
-       }
     }
-
   }
 `;

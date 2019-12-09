@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
       <Footer />
     </ThemeProvider>

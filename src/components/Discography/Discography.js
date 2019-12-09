@@ -46,14 +46,6 @@ const Discography = () => {
           albums.edges.map(({ node }) => (
             <DiscoItem key={node.id} album={node} />
           ))}
-        {albums &&
-          albums.edges.map(({ node }) => (
-            <DiscoItem key={node.id} album={node} />
-          ))}
-        {albums &&
-          albums.edges.map(({ node }) => (
-            <DiscoItem key={node.id} album={node} />
-          ))}
       </DiscographyGrid>
     </Wrapper>
   );

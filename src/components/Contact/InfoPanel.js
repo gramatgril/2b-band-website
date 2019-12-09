@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import { StyledFrame } from "./../../styles/StyledComponents";
+import { StyledTitle } from "./../../styles/StyledComponents";
+
 const InfoPanel = () => {
   return (
     <Wrapper>
@@ -39,28 +42,11 @@ const InfoPanel = () => {
 
 export default InfoPanel;
 
-const Title = styled.div``;
+const Title = styled(StyledTitle)``;
 
-const Wrapper = styled.div`
-  padding: 1rem;
-  margin: 2rem 0;
-  border: 2px solid ${({ theme }) => theme.gold[300]};
-  border-radius: 8px;
-  color: ${({ theme }) => theme.gold[500]};
-  background: ${({ theme }) => theme.blue[500]};
-
-  ${Title} {
-    h2 {
-      color: ${({ theme }) => theme.gold[300]};
-      letter-spacing: 2px;
-      font-weight: 500;
-      padding: 0 0 1.5rem 0;
-    }
-  }
-
+const Wrapper = styled(StyledFrame)`
   p {
-    padding-bottom: 1rem;
     text-align: justify;
-    color: ${({ theme }) => theme.gold[500]};
+    color: ${({ theme }) => theme.white};
   }
 `;
