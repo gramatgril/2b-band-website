@@ -112,6 +112,8 @@ const Wrapper = styled.article`
   }
 
   ${Title} {
+    text-transform: uppercase;
+    margin: 0.5rem 0 0 0;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -119,8 +121,8 @@ const Wrapper = styled.article`
 
   ${Date} {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: ${({ theme }) => theme.white};
+    margin: 0 0 0.5rem 0;
+    color: ${({ theme }) => theme.gold[300]};
   }
 
   ${Icons} {

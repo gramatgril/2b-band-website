@@ -51,7 +51,7 @@ const Wrapper = styled.article`
 
       p {
         letter-spacing: 1px;
-        padding: 0.5rem 0;
+        padding: 0 0 0.5rem 0;
         margin: 0;
         white-space: normal;
       }
@@ -69,6 +69,7 @@ const Wrapper = styled.article`
     }
 
     ${Venue} {
+      text-align: left;
       grid-column: 1 / 7;
     }
 
@@ -106,11 +107,12 @@ const Wrapper = styled.article`
     }
 
     ${Venue} {
+      text-align: right;
       grid-column: 4 / 9;
     }
 
     ${City} {
-        grid-column: 9 / 13;
+      grid-column: 9 / 13;
     }
   }
 `;

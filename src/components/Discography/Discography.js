@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 
 import DiscoItem from "./DiscoItem";
+import SectionTitle from "../Common/SectionTitle";
 
 const getAlbums = graphql`
   query {
@@ -33,6 +34,7 @@ const Discography = () => {
 
   return (
     <Wrapper>
+      <SectionTitle title="diskografija" />
       <DiscographyGrid>
         {albums &&
           albums.edges.map(({ node }) => (
@@ -56,9 +58,11 @@ export default Discography;
 const DiscographyGrid = styled.div``;
 
 const Wrapper = styled.section`
+  min-height: 100vh;
   padding: 4rem 0;
   width: 90vw;
   margin: 0 auto;
+  text-align: center;
 
   ${DiscographyGrid} {
     display: grid;

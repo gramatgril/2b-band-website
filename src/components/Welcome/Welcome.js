@@ -3,11 +3,18 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
-const getImage = graphql`
+const getImages = graphql`
   {
-    file(relativePath: { eq: "band-logo.png" }) {
+    logo: file(relativePath: { eq: "band-logo.png" }) {
       image: childImageSharp {
         fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    band: file(relativePath: { eq: "2b-welcome.png" }) {
+      image: childImageSharp {
+        fluid(quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -15,13 +22,19 @@ const getImage = graphql`
   }
 `;
 const Welcome = () => {
-  const { file } = useStaticQuery(getImage);
-  console.log("file:", file);
+  const { logo, band } = useStaticQuery(getImages);
 
   return (
     <Wrapper>
+      {/* <ImageContainer>
+        <Img fluid={logo.image.fluid} className="img" />
+      </ImageContainer> */}
       <ImageContainer>
-        <Img fluid={file.image.fluid} className="img" />
+        <Img
+          fluid={band.image.fluid}
+          className="img"
+          imgStyle={{ objectFit: "fit", objectPosition: "50% 50%" }}
+        />
       </ImageContainer>
     </Wrapper>
   );
@@ -35,10 +48,26 @@ const Wrapper = styled.section`
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
-  height: 100vh;
+  min-height: 100vh;
 
   ${ImageContainer} {
-    height: 300px;
-    width: 300px;
+    margin: 4rem auto;
+    /* max-width: 60vw; */
+  }
+
+  @media (min-width: 576px) {
+    ${ImageContainer} {
+      max-width: 90vw;
+    }
+  }
+  @media (min-width: 900px) {
+    ${ImageContainer} {
+      max-width: 80vw;
+    }
+  }
+  @media (min-width: 1200px) {
+    ${ImageContainer} {
+      max-width: 30vw;
+    }
   }
 `;

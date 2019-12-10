@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
+import SectionTitle from "../Common/SectionTitle";
 
 const getImages = graphql`
   query {
@@ -28,6 +29,7 @@ const Gallery = () => {
 
   return (
     <Wrapper>
+      <SectionTitle title="galerija" />
       <GalleryGrid>
         {gallery.edges.map(({ node }) => (
           <Image key={node.id}>
@@ -57,10 +59,10 @@ const Image = styled.div``;
 
 const Wrapper = styled.section`
   /* == MOBILE == */
-  width: 100vw;
+  text-align: center;
+  min-height: 100vh;
 
   ${GalleryGrid} {
-    width: 100vw;
     padding: 2rem 0.5rem;
     margin: 0 auto;
     display: grid;

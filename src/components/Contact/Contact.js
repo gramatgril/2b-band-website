@@ -3,26 +3,27 @@ import styled from "styled-components";
 
 import BookingPanel from "./BookingPanel";
 import ContactForm from "./ContactForm";
-import InfoPanel from "./InfoPanel";
 import PressKitPanel from "./PressKit";
+import Waves from "./../Common/Waves";
+
+import { theme } from "./../../styles/theme";
 
 const Contact = () => {
   return (
     <Wrapper>
-      <ContactGrid>
-        <div className="info">
-          <InfoPanel />
-        </div>
-        <div className="contact">
-          <ContactForm />
-        </div>
-        <div className="booking">
-          <BookingPanel />
-        </div>
-        <div className="presskit">
-          <PressKitPanel />
-        </div>
-      </ContactGrid>
+      <Waves topColor={theme.blue[400]} bottomColor={theme.blue[400]}>
+        <ContactGrid>
+          <div className="contact">
+            <ContactForm />
+          </div>
+          <div className="booking">
+            <BookingPanel />
+          </div>
+          <div className="presskit">
+            <PressKitPanel />
+          </div>
+        </ContactGrid>
+      </Waves>
     </Wrapper>
   );
 };
@@ -33,15 +34,22 @@ const ContactGrid = styled.div``;
 const Panels = styled.div``;
 
 const Wrapper = styled.section`
-  /* height: 100vh; */
   text-align: center;
+  background: ${({ theme }) => theme.gold[100]};
+
+  .bottom-wave {
+    transform: translateY(20px);
+  }
+
+  .top-wave {
+    transform: translateY(-20px);
+  }
 
   ${ContactGrid} {
     margin: 1rem 0;
     padding: 4rem 0;
     width: 90vw;
     margin: 0 auto;
-
     display: grid;
     grid-gap: 2rem;
   }

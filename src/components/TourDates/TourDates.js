@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
+import SectionTitle from "../Common/SectionTitle";
 
 const getTourDates = graphql`
   {
@@ -23,6 +24,7 @@ const TourDates = () => {
 
   return (
     <Wrapper>
+      <SectionTitle title="koncerti" />
       <TourDatesGrid>
         {allShows.edges.map(({ node }) => {
           return <TourCard key={node.id} show={node} />;
@@ -38,6 +40,8 @@ const TourDatesGrid = styled.div``;
 
 const Wrapper = styled.section`
   padding: 4rem 0;
+  text-align: center;
+  min-height: 100vh;
 
   ${TourDatesGrid} {
     display: grid;
