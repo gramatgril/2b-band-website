@@ -71,7 +71,10 @@ const Wrapper = styled.section`
     grid-gap: 2rem;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
+    width: 80vw;
+  }
+  @media (min-width: 1200px) {
     width: 60vw;
   }
   @media (min-width: 2000px) {

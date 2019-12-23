@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import backImg from "../images/bcg.png";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -9,7 +10,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  background: #008dc7;
+  background: #8A0D1C;
+  background-image: url(${backImg});
+  background-repeat: repeat-y repeat-x;
   font-size: 1rem;
 }
 

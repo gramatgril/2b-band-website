@@ -12,7 +12,7 @@ const getImages = graphql`
         }
       }
     }
-    band: file(relativePath: { eq: "2b-welcome.png" }) {
+    band: file(relativePath: { eq: "2b-welcome-cord.png" }) {
       image: childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -47,8 +47,7 @@ const ImageContainer = styled.div``;
 const Wrapper = styled.section`
   /* display: flex; */
   /* justify-content: center; */
-  /* align-items: center; */
-  min-height: 100vh;
+  height: 100vh;
 
   ${ImageContainer} {
     margin: 4rem auto;
@@ -60,11 +59,13 @@ const Wrapper = styled.section`
       max-width: 90vw;
     }
   }
+
   @media (min-width: 900px) {
     ${ImageContainer} {
       max-width: 80vw;
     }
   }
+
   @media (min-width: 1200px) {
     ${ImageContainer} {
       max-width: 30vw;

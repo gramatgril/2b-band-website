@@ -31,9 +31,9 @@ const About = () => {
   return (
     <Wrapper>
       <Waves topColor={theme.blue[400]} bottomColor={theme.blue[400]}>
-        <SectionTitle title="O nas" color={theme.blue[500]} />
+        <SectionTitle title="kdo sva" color={theme.blue[500]} />
         <ContentGrid>
-          <TextContainer className="text-panel one">
+          <TextContainer>
             <p>
               2B je ime glasbenega dvojca bratov Gašperja in Primoža, ki ste ju
               zadnje mesece lahko bolje spoznali po skladbah »Najini koraki« ter
@@ -47,7 +47,7 @@ const About = () => {
               pomladi in jo sčasoma vzpostavile kot prikupen radijski hit.
             </p>
           </TextContainer>
-          <ImageContainer className="image-panel four">
+          <ImageContainer>
             <Img
               fluid={aboutPageOne.image.fluid}
               alt="2b live"
@@ -55,7 +55,7 @@ const About = () => {
               imgStyle={{ objectFit: "contain", objectPosition: "50% 50%" }}
             />
           </ImageContainer>
-          <TextContainer className="text-panel two">
+          <TextContainer>
             <p>
               V preteklosti ste 2B tako lahko slišali že na velikih festivalskih
               odrih Schengenfesta in Urbanega Dejanja kot tudi v dvoranah
@@ -66,7 +66,7 @@ const About = () => {
               Koromandija).
             </p>
           </TextContainer>
-          <ImageContainer className="image-panel five">
+          <ImageContainer>
             <Img
               fluid={aboutPageTwo.image.fluid}
               alt="2b live"
@@ -74,7 +74,7 @@ const About = () => {
               imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
             />
           </ImageContainer>
-          <TextContainer className="text-panel three">
+          <TextContainer>
             <p>
               Novi album pričakujemo 2020 (Nika Records), na njem pa bosta
               Gašper in Primož predstavila tisto, kar ju neizbrisno povezuje:
@@ -112,27 +112,6 @@ const Wrapper = styled.section`
     margin: 0 auto;
   }
 
-  .text-panel {
-    padding: 0.5rem;
-    background: ${({ theme }) => theme.gold[100]};
-  }
-
-  .one {
-  }
-
-  .two {
-  }
-
-  .three {
-    grid-column: 1 / -1;
-  }
-
-  .four {
-  }
-
-  .five {
-  }
-
   ${TextContainer} {
     p {
       margin: 0 0 1.5rem 0;
@@ -145,16 +124,19 @@ const Wrapper = styled.section`
     height: auto;
     width: 100%;
     margin: 0 0 1rem 0;
-    /* padding: 1rem; */
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 1200px) {
     ${ContentGrid} {
       display: grid;
       grid-gap: 2rem;
       grid-template-columns: 1fr 1fr;
       width: 60vw;
       margin: 0 auto;
+
+      ${TextContainer} :nth-child(5) {
+        grid-column: 1 / -1;
+      }
     }
   }
 `;

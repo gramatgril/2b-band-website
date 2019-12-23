@@ -15,11 +15,11 @@ const Page = () => {
     <Wrapper>
       <Welcome />
       <PromotedVideo />
-      <About />
       <TourDates />
+      {/* <About /> */}
       <Discography />
       <Gallery />
-      <Contact />
+      {/* <Contact /> */}
     </Wrapper>
   );
 };

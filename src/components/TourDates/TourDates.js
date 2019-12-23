@@ -50,13 +50,13 @@ const Wrapper = styled.section`
     grid-gap: 2rem;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     ${TourDatesGrid} {
-      width: 70vw;
+      width: 80vw;
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1200px) {
     ${TourDatesGrid} {
       width: 60vw;
     }

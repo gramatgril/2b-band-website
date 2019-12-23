@@ -59,9 +59,10 @@ const Image = styled.div``;
 
 const Wrapper = styled.section`
   /* == MOBILE == */
+  margin: 4rem 0;
   text-align: center;
   min-height: 100vh;
-
+  /* margin: 0 auto; */
   ${GalleryGrid} {
     padding: 2rem 0.5rem;
     margin: 0 auto;

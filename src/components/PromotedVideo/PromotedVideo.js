@@ -5,7 +5,7 @@ import YoutubeEmbedVideo from "youtube-embed-video";
 const PromotedVideo = () => (
   <Wrapper>
     <StyledVideo
-      videoId="uGGcdRKLkpo"
+      videoId="2nu3zr9CFzk"
       suggestions={false}
       showInfo={false}
       controls={false}
@@ -33,8 +33,8 @@ const Wrapper = styled.section`
     height: 60vh;
 
     ${StyledVideo} {
-      height: 80%;
-      width: 80%;
+      height: 100%;
+      width: 100%;
     }
   }
 

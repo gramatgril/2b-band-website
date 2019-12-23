@@ -19,8 +19,14 @@ const Title = styled.h1`
   color: ${({ theme, color }) => (color ? color : theme.gold[500])};
   text-transform: uppercase;
   letter-spacing: 4px;
+  white-space: nowrap;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    margin: 0 0 5rem 0;
+  }
+
+  @media (min-width: 1200px) {
     font-size: 5rem;
     margin: 0 0 8rem 0;
   }
