@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import Hero from "../Common/Hero";
-import BgImage from "./../Common/BackgroundImage";
 
 const getImages = graphql`
   {
@@ -16,7 +15,7 @@ const getImages = graphql`
     }
     band: file(relativePath: { eq: "2b-bcg1.jpg" }) {
       image: childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
+        fluid(quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -28,24 +27,22 @@ const Welcome = () => {
 
   return (
     <Wrapper>
-      <BgImage
-        title="astronaut"
-        fluid={band.image.fluid}
-        overlayColor="#04040454"
-      >
-        {/* <h2 style={{ color: "white" }}>Look at me!</h2> */}
-        <Logo>
-          <Img fluid={logo.image.fluid} className="img" />
-        </Logo>
-      </BgImage>
-
-      {/* <ImageContainer>
+      {/* <StyledHero img={band.image.fluid}> */}
+      {/* <Logo>
+          <Img
+            fluid={logo.image.fluid}
+            className="img"
+            imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
+          />
+        </Logo> */}
+      <ImageContainer>
         <Img
           fluid={band.image.fluid}
           className="img"
           imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
-      </ImageContainer> */}
+      </ImageContainer>
+      {/* </StyledHero> */}
     </Wrapper>
   );
 };
@@ -54,28 +51,16 @@ export default Welcome;
 
 const ImageContainer = styled.div``;
 const Logo = styled.div``;
+const StyledHero = styled(Hero)`
+  /* height: 100vh; */
+`;
 
 const Wrapper = styled.section`
   /* display: flex; */
   /* justify-content: center; */
-  /* height: 100vh; */
-
+  height: 100vh;
   ${ImageContainer} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    height: 100vh;
-
-    img {
-      object-fit: cover !important;
-      object-position: 0% 0% !important;
-      font-family: "object-fit: cover !important; object-position: 0% 0% !important;";
-    }
-
-    /* margin: 4rem auto; */
-    /* max-width: 60vw; */
+    height: 100%;
   }
 
   ${Logo} {
