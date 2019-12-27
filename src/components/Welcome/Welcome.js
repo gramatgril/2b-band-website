@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
-import Hero from "../Common/Hero";
-
 const getImages = graphql`
   {
     logo: file(relativePath: { eq: "band-logo.png" }) {
@@ -28,7 +26,6 @@ const Welcome = () => {
 
   return (
     <Wrapper>
-      {/* <StyledHero img={band.image.fluid}> */}
       {/* <Logo>
           <Img
             fluid={logo.image.fluid}
@@ -43,7 +40,6 @@ const Welcome = () => {
           imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
       </ImageContainer>
-      {/* </StyledHero> */}
     </Wrapper>
   );
 };
@@ -52,9 +48,6 @@ export default Welcome;
 
 const ImageContainer = styled.div``;
 const Logo = styled.div``;
-const StyledHero = styled(Hero)`
-  /* height: 100vh; */
-`;
 
 const Wrapper = styled.section`
   /* display: flex; */

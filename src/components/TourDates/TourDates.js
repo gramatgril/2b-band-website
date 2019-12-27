@@ -31,16 +31,16 @@ const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
-    // <StyledHero img={band.image.fluid}>
-    <Wrapper>
-      <SectionTitle title="koncerti" />
-      <TourDatesGrid>
-        {allShows.edges.map(({ node }) => {
-          return <TourCard key={node.id} show={node} />;
-        })}
-      </TourDatesGrid>
-    </Wrapper>
-    // </StyledHero>
+    <StyledHero img={band.image.fluid}>
+      <Wrapper>
+        <SectionTitle title="koncerti" />
+        <TourDatesGrid>
+          {allShows.edges.map(({ node }) => {
+            return <TourCard key={node.id} show={node} />;
+          })}
+        </TourDatesGrid>
+      </Wrapper>
+    </StyledHero>
   );
 };
 
@@ -53,9 +53,9 @@ const StyledHero = styled(Hero)`
 `;
 
 const Wrapper = styled.section`
-  padding: 8rem 0;
   text-align: center;
   height: 100vh;
+  padding: 8rem 0;
 
   ${TourDatesGrid} {
     display: grid;
