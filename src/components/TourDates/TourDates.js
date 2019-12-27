@@ -28,6 +28,9 @@ const getTourDates = graphql`
 `;
 
 const TourDates = () => {
+  if (typeof window === "undefined") {
+    global.window = {};
+  }
   const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
