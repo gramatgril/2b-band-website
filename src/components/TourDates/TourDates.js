@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
 import SectionTitle from "../Common/SectionTitle";
+import Hero from "../Common/Hero";
 
 const getTourDates = graphql`
   {
@@ -16,21 +17,30 @@ const getTourDates = graphql`
         }
       }
     }
+    band: file(relativePath: { eq: "2b-bcg4.jpg" }) {
+      image: childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
   }
 `;
 
 const TourDates = () => {
-  const { allShows } = useStaticQuery(getTourDates);
+  const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
-    <Wrapper>
-      <SectionTitle title="koncerti" />
-      <TourDatesGrid>
-        {allShows.edges.map(({ node }) => {
-          return <TourCard key={node.id} show={node} />;
-        })}
-      </TourDatesGrid>
-    </Wrapper>
+    <StyledHero img={band.image.fluid}>
+      <Wrapper>
+        <SectionTitle title="koncerti" />
+        <TourDatesGrid>
+          {allShows.edges.map(({ node }) => {
+            return <TourCard key={node.id} show={node} />;
+          })}
+        </TourDatesGrid>
+      </Wrapper>
+    </StyledHero>
   );
 };
 
@@ -38,10 +48,14 @@ export default TourDates;
 
 const TourDatesGrid = styled.div``;
 
+const StyledHero = styled(Hero)`
+  background: rgba(33, 33, 33, 0.8);
+`;
+
 const Wrapper = styled.section`
-  padding: 4rem 0;
+  padding: 8rem 0;
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
 
   ${TourDatesGrid} {
     display: grid;

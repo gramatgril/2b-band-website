@@ -11,7 +11,7 @@ const typography = new Typography({
   blockMarginBottom: "true",
   googleFonts: [
     {
-      name: "Helvetica Neue",
+      name: "Bowlby One SC",
       styles: ["400", "500", "600", "700"],
     },
     {
@@ -19,7 +19,7 @@ const typography = new Typography({
       styles: ["400", "500", "600", "700"],
     },
   ],
-  headerFontFamily: ["Helvetica Neue", "sans-serif"],
+  headerFontFamily: ["Bowlby One SC", "cursive"],
   bodyFontFamily: ["Open Sans", "sans-serif"],
 });
 

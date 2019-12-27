@@ -9,21 +9,20 @@ const propTypes = {
 };
 
 const Hero = ({ img, className, children }) => (
-  <BackgroundImage className={className} fluid={img}>
+  <BackgroundImage className={className} fluid={img} Tag="section">
     {children}
   </BackgroundImage>
 );
 
 export default styled(Hero)`
   height: 100%;
-  /* background: rgba(33, 33, 33, 0.4); */
+  width: 100%;
+  background: #040e18;
+  /* background: rgba(33, 33, 33, 0.2); */
   background-position: center;
   background-size: cover;
+  /* background-repeat: no-repeat; */
   opacity: 1 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position: relative; */
 `;
 
 Hero.propTypes = propTypes;
