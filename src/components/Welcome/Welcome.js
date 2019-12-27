@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+
 import Hero from "../Common/Hero";
 
 const getImages = graphql`
@@ -15,7 +16,7 @@ const getImages = graphql`
     }
     band: file(relativePath: { eq: "2b-bcg1.jpg" }) {
       image: childImageSharp {
-        fluid(quality: 100) {
+        fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid
         }
       }

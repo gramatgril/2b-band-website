@@ -41,25 +41,25 @@ const Discography = () => {
   const { albums, band } = useStaticQuery(getAlbums);
 
   return (
-    <StyledHero img={band.image.fluid}>
-      <Wrapper>
-        <SectionTitle title="diskografija" />
-        <DiscographyGrid>
-          {albums &&
-            albums.edges.map(({ node }) => (
-              <DiscoItem key={node.id} album={node} />
-            ))}
-          {albums &&
-            albums.edges.map(({ node }) => (
-              <DiscoItem key={node.id} album={node} />
-            ))}
-          {albums &&
-            albums.edges.map(({ node }) => (
-              <DiscoItem key={node.id} album={node} />
-            ))}
-        </DiscographyGrid>
-      </Wrapper>
-    </StyledHero>
+    // <StyledHero img={band.image.fluid}>
+    <Wrapper>
+      <SectionTitle title="diskografija" />
+      <DiscographyGrid>
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+        {albums &&
+          albums.edges.map(({ node }) => (
+            <DiscoItem key={node.id} album={node} />
+          ))}
+      </DiscographyGrid>
+    </Wrapper>
+    // </StyledHero>
   );
 };
 
