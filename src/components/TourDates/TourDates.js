@@ -28,22 +28,19 @@ const getTourDates = graphql`
 `;
 
 const TourDates = () => {
-  if (typeof window === "undefined") {
-    global.window = {};
-  }
   const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
-    <StyledHero img={band.image.fluid}>
-      <Wrapper>
+    <Wrapper>
+      <StyledHero img={band.image.fluid}>
         <SectionTitle title="koncerti" />
         <TourDatesGrid>
           {allShows.edges.map(({ node }) => {
             return <TourCard key={node.id} show={node} />;
           })}
         </TourDatesGrid>
-      </Wrapper>
-    </StyledHero>
+      </StyledHero>
+    </Wrapper>
   );
 };
 
@@ -58,7 +55,7 @@ const StyledHero = styled(Hero)`
 const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
-  padding: 8rem 0;
+  /* padding: 8rem 0; */
 
   ${TourDatesGrid} {
     display: grid;
