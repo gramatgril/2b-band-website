@@ -30,10 +30,13 @@ const getTourDates = graphql`
 
 const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
+  if (typeof window === "undefined") {
+    global.window = {};
+  }
 
   return (
-    <StyledBackground fluid={band.image.fluid} Tag="section">
-      <Wrapper>
+    <Wrapper>
+      <BackgroundImage fluid={band.image.fluid} Tag="section">
         <SectionTitle title="koncerti" />
         <TourDatesGrid>
           {allShows.edges.map(({ node }) => {
@@ -43,8 +46,8 @@ const TourDates = () => {
         {/* <Hero img={band.image.fluid}> */}
 
         {/* </Hero> */}
-      </Wrapper>
-    </StyledBackground>
+      </BackgroundImage>
+    </Wrapper>
   );
 };
 
