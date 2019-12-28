@@ -31,16 +31,16 @@ const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
-    <Wrapper>
-      <StyledSectionBackground img={band.image.fluid}>
+    <StyledSectionBackground img={band.image.fluid}>
+      <Wrapper>
         <SectionTitle title="koncerti" />
         <TourDatesGrid>
           {allShows.edges.map(({ node }) => {
             return <TourCard key={node.id} show={node} />;
           })}
         </TourDatesGrid>
-      </StyledSectionBackground>
-    </Wrapper>
+      </Wrapper>
+    </StyledSectionBackground>
   );
 };
 

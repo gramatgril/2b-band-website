@@ -12,6 +12,8 @@ const SectionBackground = ({ children, className, img }) => {
 
 const StyledSectionBackground = styled(SectionBackground)`
   width: 100%;
+  background: rgba(33, 33, 33, 0.8);
+  opacity: 1 !important;
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
