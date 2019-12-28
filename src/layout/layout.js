@@ -12,9 +12,9 @@ const propTypes = {
 };
 
 const Layout = ({ children }) => {
-  if (typeof window === "undefined") {
-    global.window = {};
-  }
+  // if (typeof window === "undefined") {
+  //   global.window = {};
+  // }
 
   return (
     <ThemeProvider theme={theme}>
