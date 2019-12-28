@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
 import SectionTitle from "../Common/SectionTitle";
 import Hero from "../Common/Hero";
-import BackgroundImage from "gatsby-background-image";
 
 const getTourDates = graphql`
   {
@@ -36,17 +35,12 @@ const TourDates = () => {
 
   return (
     <Wrapper>
-      <BackgroundImage fluid={band.image.fluid} Tag="section">
-        <SectionTitle title="koncerti" />
-        <TourDatesGrid>
-          {allShows.edges.map(({ node }) => {
-            return <TourCard key={node.id} show={node} />;
-          })}
-        </TourDatesGrid>
-        {/* <Hero img={band.image.fluid}> */}
-
-        {/* </Hero> */}
-      </BackgroundImage>
+      <SectionTitle title="koncerti" />
+      <TourDatesGrid>
+        {allShows.edges.map(({ node }) => {
+          return <TourCard key={node.id} show={node} />;
+        })}
+      </TourDatesGrid>
     </Wrapper>
   );
 };
@@ -54,15 +48,6 @@ const TourDates = () => {
 export default TourDates;
 
 const TourDatesGrid = styled.div``;
-
-const StyledBackground = styled(BackgroundImage)`
-  height: 100%;
-  width: 100%;
-  opacity: 1 !important;
-  /* background-position: center; */
-  /* background-size: cover; */
-  background: rgba(33, 33, 33, 0.8);
-`;
 
 const Wrapper = styled.section`
   text-align: center;
