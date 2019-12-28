@@ -52,9 +52,6 @@ const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
   padding: 8rem 0;
-  background-image: url("/2b-bcg4.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 
   ${TourDatesGrid} {
     display: grid;

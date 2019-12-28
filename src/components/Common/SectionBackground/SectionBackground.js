@@ -3,6 +3,9 @@ import styled from "styled-components";
 import BackgroundImage from "gatsby-background-image";
 
 const SectionBackground = ({ children, className, img }) => {
+  if (typeof window === "undefined") {
+    global.window = {};
+  }
   return (
     <BackgroundImage fluid={img} className={className} tag="Section">
       {children}
