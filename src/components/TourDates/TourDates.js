@@ -17,7 +17,7 @@ const getTourDates = graphql`
         }
       }
     }
-    band: file(relativePath: { eq: "2b-welcome-cord.png" }) {
+    band: file(relativePath: { eq: "2b-bcg4.jpg" }) {
       image: childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_noBase64
@@ -35,12 +35,14 @@ const TourDates = () => {
 
   return (
     <Wrapper>
-      <SectionTitle title="koncerti" />
-      <TourDatesGrid>
-        {allShows.edges.map(({ node }) => {
-          return <TourCard key={node.id} show={node} />;
-        })}
-      </TourDatesGrid>
+      <Hero img={band.image.fluid}>
+        <SectionTitle title="koncerti" />
+        <TourDatesGrid>
+          {allShows.edges.map(({ node }) => {
+            return <TourCard key={node.id} show={node} />;
+          })}
+        </TourDatesGrid>
+      </Hero>
     </Wrapper>
   );
 };

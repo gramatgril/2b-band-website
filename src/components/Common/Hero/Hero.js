@@ -18,10 +18,10 @@ export default styled(Hero)`
   height: 100%;
   width: 100%;
   background: #040e18;
-  /* background: rgba(33, 33, 33, 0.2); */
+  background: rgba(33, 33, 33, 0.8);
   background-position: center;
   background-size: cover;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   opacity: 1 !important;
 `;
 
