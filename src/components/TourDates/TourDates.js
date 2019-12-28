@@ -18,7 +18,7 @@ const getTourDates = graphql`
         }
       }
     }
-    band: file(relativePath: { eq: "2b-bcg4.jpg" }) {
+    band: file(relativePath: { eq: "2b-welcome-cord.png" }) {
       image: childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_noBase64
