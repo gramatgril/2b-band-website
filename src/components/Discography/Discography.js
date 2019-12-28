@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 
-import Hero from "../Common/Hero";
 import DiscoItem from "./DiscoItem";
 import SectionTitle from "../Common/SectionTitle";
 
@@ -41,7 +40,6 @@ const Discography = () => {
   const { albums, band } = useStaticQuery(getAlbums);
 
   return (
-    // <StyledHero img={band.image.fluid}>
     <Wrapper>
       <SectionTitle title="diskografija" />
       <DiscographyGrid>
@@ -59,18 +57,12 @@ const Discography = () => {
           ))}
       </DiscographyGrid>
     </Wrapper>
-    // </StyledHero>
   );
 };
 
 export default Discography;
 
 const DiscographyGrid = styled.div``;
-
-const StyledHero = styled(Hero)`
-  background: rgba(33, 33, 33, 0.8);
-  /* background: rgba(255, 255, 255, 0.6); */
-`;
 
 const Wrapper = styled.section`
   min-height: 100vh;

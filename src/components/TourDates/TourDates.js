@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
 import SectionTitle from "../Common/SectionTitle";
-import Hero from "../Common/Hero";
+import StyledSectionBackground from "../Common/SectionBackground";
 
 const getTourDates = graphql`
   {
@@ -29,20 +29,17 @@ const getTourDates = graphql`
 
 const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
-  if (typeof window === "undefined") {
-    global.window = {};
-  }
 
   return (
     <Wrapper>
-      <Hero img={band.image.fluid}>
+      <StyledSectionBackground img={band.image.fluid}>
         <SectionTitle title="koncerti" />
         <TourDatesGrid>
           {allShows.edges.map(({ node }) => {
             return <TourCard key={node.id} show={node} />;
           })}
         </TourDatesGrid>
-      </Hero>
+      </StyledSectionBackground>
     </Wrapper>
   );
 };
@@ -55,6 +52,9 @@ const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
   padding: 8rem 0;
+  background-image: url("/2b-bcg4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 
   ${TourDatesGrid} {
     display: grid;
