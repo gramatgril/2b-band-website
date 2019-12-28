@@ -14,7 +14,7 @@ const Page = () => {
   return (
     <Wrapper>
       <Welcome />
-      <PromotedVideo />
+      {/* <PromotedVideo /> */}
       <TourDates />
       {/* <About /> */}
       <Discography />
