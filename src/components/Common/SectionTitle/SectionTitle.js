@@ -14,6 +14,7 @@ SectionTitle.propTypes = propTypes;
 export default SectionTitle;
 
 const Title = styled.h1`
+  font-family: "Bowlby One SC";
   margin: 0 0 5rem 0;
   font-size: 2rem;
   color: ${({ theme, color }) => (color ? color : theme.gold[500])};

@@ -17,13 +17,6 @@ const getTourDates = graphql`
         }
       }
     }
-    band: file(relativePath: { eq: "2b-bcg4.jpg" }) {
-      image: childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
   }
 `;
 
@@ -31,16 +24,14 @@ const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
 
   return (
-    <StyledSectionBackground img={band.image.fluid}>
-      <Wrapper>
-        <SectionTitle title="koncerti" />
-        <TourDatesGrid>
-          {allShows.edges.map(({ node }) => {
-            return <TourCard key={node.id} show={node} />;
-          })}
-        </TourDatesGrid>
-      </Wrapper>
-    </StyledSectionBackground>
+    <Wrapper>
+      <SectionTitle title="koncerti" />
+      <TourDatesGrid>
+        {allShows.edges.map(({ node }) => (
+          <TourCard key={node.id} show={node} />
+        ))}
+      </TourDatesGrid>
+    </Wrapper>
   );
 };
 

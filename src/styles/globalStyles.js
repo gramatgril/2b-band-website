@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import darkBcg from "../images/darkGrayBcg.png";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -9,7 +10,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  background: #21252a;
+  background: #1F2328;
+  background-image: url(${darkBcg});
   background-repeat: repeat-y repeat-x;
   font-size: 1rem;
 }
@@ -19,6 +21,8 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+
 
 .img {
     height: 100%;

@@ -19,7 +19,7 @@ const typography = new Typography({
       styles: ["400", "500", "600", "700"],
     },
   ],
-  headerFontFamily: ["Bowlby One SC", "cursive"],
+  headerFontFamily: ["Open Sans", "sans-serif"],
   bodyFontFamily: ["Open Sans", "sans-serif"],
 });
 
