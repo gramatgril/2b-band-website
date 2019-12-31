@@ -14,10 +14,12 @@ const Newsletter = () => {
           <Input>
             <InputField placeholder="E-mail naslov" />
             <Button type="submit">Naroči se</Button>
-            <TermsLink to="/pravna-obvestila" className="link">
-              <p>Pogoji</p>
-            </TermsLink>
           </Input>
+          <TermsLink>
+            <StyledLink to="/pravna-obvestila" className="link">
+              Pogoji
+            </StyledLink>
+          </TermsLink>
         </NewsletterForm>
       </Grid>
     </Wrapper>
@@ -31,8 +33,9 @@ const Title = styled.div``;
 const NewsletterForm = styled.form``;
 const Input = styled.div``;
 const InputField = styled.input``;
-const TermsLink = styled(Link)``;
+const TermsLink = styled.div``;
 const Button = styled.button``;
+const StyledLink = styled(Link)``;
 
 const Wrapper = styled.section`
   background: ${({ theme }) => theme.gold[500]};
@@ -59,42 +62,45 @@ const Wrapper = styled.section`
       h2 {
         font-weight: 400;
         font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
       }
     }
 
     ${NewsletterForm} {
-      display: grid;
-      justify-content: flex-start;
-      align-items: center;
-
       ${TermsLink} {
-        vertical-align: text-top;
-        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.75rem;
+        ${StyledLink} {
+          vertical-align: text-top;
+          transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.75rem;
 
-        & :hover {
-          color: ${({ theme }) => theme.grey[900]};
+          & :hover {
+            color: ${({ theme }) => theme.grey[900]};
+          }
         }
       }
 
       ${Input} {
+        max-width: 500px;
         padding: 2rem 0 0 0;
-        width: 100%;
+        display: flex;
+        justify-content: space-between;
 
         ${InputField} {
+          width: 100%;
           background: transparent;
           font-size: 1rem;
           border: 2px solid rgba(248, 249, 250, 0.7);
           color: ${({ theme }) => theme.white};
-          padding: 0.5rem 0.5rem;
+          padding: 0.5rem 0.25rem;
           margin: 0 0.5rem 0 0;
           outline: none;
         }
 
         ${Button} {
+          white-space: nowrap;
           font-size: 1rem;
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0.5rem;
           cursor: pointer;
           font-weight: 600;
           text-transform: uppercase;
@@ -135,13 +141,13 @@ const Wrapper = styled.section`
 
     ${NewsletterForm} {
       ${Button} {
-        padding: 0.5 1rem;
+        padding: 0.5rem 1rem;
       }
     }
   }
 
   @media (min-width: 1200px) {
-    height: 12rem;
+    height: 14rem;
     ${Grid} {
       width: 60vw;
       margin: 0 auto;
@@ -149,8 +155,14 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 1fr;
     }
 
-    ${Input} {
-      padding: 0;
+    ${NewsletterForm} {
+      display: grid;
+      justify-content: flex-start;
+      align-content: center;
+
+      ${Input} {
+        width: 400px;
+      }
     }
   }
 `;

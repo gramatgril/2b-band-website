@@ -41,7 +41,7 @@ const Discography = () => {
 
   return (
     <Wrapper>
-      <SectionTitle title="diskografija" />
+      <SectionTitle title="glasba" />
       <DiscographyGrid>
         {albums &&
           albums.edges.map(({ node }) => (
