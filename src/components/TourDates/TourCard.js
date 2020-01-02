@@ -51,7 +51,7 @@ const Wrapper = styled.article`
 
       p {
         letter-spacing: 1px;
-        padding: 0 0 0.5rem 0;
+        padding: 0 0 0.25rem 0;
         margin: 0;
         white-space: normal;
       }
@@ -89,12 +89,12 @@ const Wrapper = styled.article`
     ${City},
     ${Venue} {
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color:  ${({ theme }) => theme.white};
 
       p {
-        padding: 0.5rem 0;
-        letter-spacing: 2px;
+
+        letter-spacing: 1px;
         white-space: normal;
       }
     }

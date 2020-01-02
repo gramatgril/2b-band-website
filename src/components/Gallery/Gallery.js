@@ -88,7 +88,7 @@ const Wrapper = styled.section`
   /* == DESKTOP == */
   @media (min-width: 1200px) {
     ${GalleryGrid} {
-      padding: 2rem 0;
+      padding: 0rem 0;
       width: 60vw;
     }
   }

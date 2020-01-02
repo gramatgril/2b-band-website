@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
+
 import Img from "gatsby-image";
+import desktopBcg from "../../images/2b-bcg1.jpg";
+import mobileBcg from "../../images/2b-welcome-cord.png";
 
 const getImages = graphql`
   {
@@ -12,34 +15,20 @@ const getImages = graphql`
         }
       }
     }
-    band: file(relativePath: { eq: "2b-bcg1.jpg" }) {
-      image: childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
   }
 `;
-const Welcome = () => {
-  const { logo, band } = useStaticQuery(getImages);
 
+const Welcome = () => {
+  const { logo } = useStaticQuery(getImages);
   return (
     <Wrapper>
       {/* <Logo>
-          <Img
-            fluid={logo.image.fluid}
-            className="img"
-            imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
-          />
-        </Logo> */}
-      <ImageContainer>
         <Img
-          fluid={band.image.fluid}
+          fluid={logo.image.fluid}
           className="img"
           imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
-      </ImageContainer>
+      </Logo> */}
     </Wrapper>
   );
 };
@@ -50,20 +39,16 @@ const ImageContainer = styled.div``;
 const Logo = styled.div``;
 
 const Wrapper = styled.section`
-  /* display: flex; */
-  /* justify-content: center; */
   height: 100vh;
-  ${ImageContainer} {
-    height: 100%;
-  }
+  background-image: url(${desktopBcg});
+  background-size: cover;
 
   ${Logo} {
-    position: relative;
-    left: 5%;
-    height: 200px;
-    width: 200px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
   }
-
   @media (min-width: 576px) {
     ${ImageContainer} {
       /* max-width: 90vw; */

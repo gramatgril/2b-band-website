@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import About from "./../../components/About";
+import Booking from "../../components/Booking/";
 import Contact from "./../../components/Contact";
 import Discography from "./../../components/Discography";
 import Gallery from "./../../components/Gallery";
@@ -20,6 +21,7 @@ const Page = () => {
       <Newsletter />
       {/* <About /> */}
       <Discography />
+      <Booking />
       <Gallery />
       {/* <Contact /> */}
     </Wrapper>

@@ -61,7 +61,7 @@ const Wrapper = styled.section`
 
       h2 {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 1.25rem;
         color: rgba(255, 255, 255, 0.9);
       }
     }
@@ -127,7 +127,7 @@ const Wrapper = styled.section`
     }
   }
 
-  @media (min-width: 375px) {
+  @media (min-width: 576px) {
     ${Grid} {
       ${Title} {
         h1 {
@@ -147,7 +147,6 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 1200px) {
-    height: 14rem;
     ${Grid} {
       width: 60vw;
       margin: 0 auto;

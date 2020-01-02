@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
 import SectionTitle from "../Common/SectionTitle";
 import StyledSectionBackground from "../Common/SectionBackground";
+import bcgImg from "../../images/2b-bcg4.jpg";
 
 const getTourDates = graphql`
   {
@@ -25,12 +26,16 @@ const TourDates = () => {
 
   return (
     <Wrapper>
-      <SectionTitle title="koncerti" />
-      <TourDatesGrid>
-        {allShows.edges.map(({ node }) => (
-          <TourCard key={node.id} show={node} />
-        ))}
-      </TourDatesGrid>
+      <div className="overlay">
+        <div className="content">
+          <SectionTitle title="koncerti" />
+          <TourDatesGrid>
+            {allShows.edges.map(({ node }) => (
+              <TourCard key={node.id} show={node} />
+            ))}
+          </TourDatesGrid>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -42,7 +47,10 @@ const TourDatesGrid = styled.div``;
 const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
-  padding: 8rem 0;
+
+  .content {
+    padding: 5rem 0;
+  }
 
   ${TourDatesGrid} {
     display: grid;
@@ -58,8 +66,18 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 1200px) {
+    background-image: url(${bcgImg});
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .overlay {
+      background: rgba(33, 33, 33, 0.9);
+      height: 100%;
+    }
     ${TourDatesGrid} {
-      width: 60vw;
+      width: 50vw;
     }
   }
 

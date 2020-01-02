@@ -41,21 +41,25 @@ const Discography = () => {
 
   return (
     <Wrapper>
-      <SectionTitle title="glasba" />
-      <DiscographyGrid>
-        {albums &&
-          albums.edges.map(({ node }) => (
-            <DiscoItem key={node.id} album={node} />
-          ))}
-        {albums &&
-          albums.edges.map(({ node }) => (
-            <DiscoItem key={node.id} album={node} />
-          ))}
-        {albums &&
-          albums.edges.map(({ node }) => (
-            <DiscoItem key={node.id} album={node} />
-          ))}
-      </DiscographyGrid>
+      <div className="overlay">
+        <div className="content">
+          <SectionTitle title="glasba" />
+          <DiscographyGrid>
+            {albums &&
+              albums.edges.map(({ node }) => (
+                <DiscoItem key={node.id} album={node} />
+              ))}
+            {albums &&
+              albums.edges.map(({ node }) => (
+                <DiscoItem key={node.id} album={node} />
+              ))}
+            {albums &&
+              albums.edges.map(({ node }) => (
+                <DiscoItem key={node.id} album={node} />
+              ))}
+          </DiscographyGrid>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -66,7 +70,7 @@ const DiscographyGrid = styled.div``;
 
 const Wrapper = styled.section`
   min-height: 100vh;
-  padding: 8rem 0;
+  padding: 5rem 0;
   width: 90vw;
   margin: 0 auto;
   text-align: center;

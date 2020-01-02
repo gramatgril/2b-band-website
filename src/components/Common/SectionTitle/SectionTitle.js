@@ -23,12 +23,12 @@ const Title = styled.h1`
   white-space: nowrap;
 
   @media (min-width: 768px) {
-    font-size: 3rem;
-    margin: 0 0 5rem 0;
+    font-size: 2rem;
+    margin: 0 0 3rem 0;
   }
 
   @media (min-width: 1200px) {
-    font-size: 5rem;
-    margin: 0 0 8rem 0;
+    font-size: 4rem;
+    margin: 0 0 5rem 0;
   }
 `;
