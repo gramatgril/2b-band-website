@@ -11,7 +11,7 @@ const typography = new Typography({
   blockMarginBottom: "true",
   googleFonts: [
     {
-      name: "Bowlby One SC",
+      name: "Shadows Into Light",
       styles: ["400", "500", "600", "700"],
     },
     {
@@ -19,7 +19,8 @@ const typography = new Typography({
       styles: ["400", "500", "600", "700"],
     },
   ],
-  headerFontFamily: ["Open Sans", "sans-serif"],
+  // headerFontFamily: ["Open Sans", "sans-serif"],
+  headerFontFamily: ["Shadows Into Light", "cursive"],
   bodyFontFamily: ["Open Sans", "sans-serif"],
 });
 

@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import About from "./../../components/About";
 import Booking from "../../components/Booking/";
-import Contact from "./../../components/Contact";
 import Discography from "./../../components/Discography";
 import Gallery from "./../../components/Gallery";
 import Layout from "../layout";
@@ -16,14 +15,13 @@ const Page = () => {
   return (
     <Wrapper>
       <Welcome />
-      <PromotedVideo />
+      {/* <PromotedVideo /> */}
       <TourDates />
       <Newsletter />
-      {/* <About /> */}
       <Discography />
       <Booking />
+      <About />
       <Gallery />
-      {/* <Contact /> */}
     </Wrapper>
   );
 };

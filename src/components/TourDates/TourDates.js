@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import TourCard from "./TourCard";
 import SectionTitle from "../Common/SectionTitle";
 import StyledSectionBackground from "../Common/SectionBackground";
-import bcgImg from "../../images/2b-bcg4.jpg";
+import bcgImg from "../../images/2b-bcg-leon-crop.jpg";
 
 const getTourDates = graphql`
   {
@@ -28,7 +28,7 @@ const TourDates = () => {
     <Wrapper>
       <div className="overlay">
         <div className="content">
-          <SectionTitle title="koncerti" />
+          <SectionTitle title="2b na odrih" />
           <TourDatesGrid>
             {allShows.edges.map(({ node }) => (
               <TourCard key={node.id} show={node} />
@@ -47,6 +47,15 @@ const TourDatesGrid = styled.div``;
 const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
+  background-image: url(${bcgImg});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .overlay {
+    background: rgba(33, 33, 33, 0.7);
+    height: 100%;
+  }
 
   .content {
     padding: 5rem 0;
@@ -72,10 +81,6 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
 
-    .overlay {
-      background: rgba(33, 33, 33, 0.9);
-      height: 100%;
-    }
     ${TourDatesGrid} {
       width: 50vw;
     }

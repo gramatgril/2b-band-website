@@ -29,7 +29,7 @@ const Gallery = () => {
 
   return (
     <Wrapper>
-      <SectionTitle title="galerija" />
+      <SectionTitle title="pred objektivom" />
       <GalleryGrid>
         {gallery.edges.map(({ node }) => (
           <Image key={node.id}>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Img from "gatsby-image";
-import desktopBcg from "../../images/2b-bcg1.jpg";
+import desktopBcg from "../../images/2b-bcg5.jpg";
 import mobileBcg from "../../images/2b-welcome-cord.png";
 
 const getImages = graphql`

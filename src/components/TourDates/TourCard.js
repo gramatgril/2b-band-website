@@ -37,7 +37,7 @@ const City = styled.div``;
 const Venue = styled.div``;
 
 const Wrapper = styled.article`
-  border-bottom: 2px solid ${({ theme }) => theme.gold[500]};
+  border-bottom: 1px solid ${({ theme }) => theme.gold[300]};
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
@@ -46,7 +46,6 @@ const Wrapper = styled.article`
     ${City},
     ${Venue} {
       text-transform: uppercase;
-      font-weight: 700;
       color:  ${({ theme }) => theme.white};
 
       p {
@@ -58,9 +57,10 @@ const Wrapper = styled.article`
     }
 
     ${Date} {
+
       text-align: left;
       grid-column: 1 / -1;
-      font-weight: 500;
+
       color:  ${({ theme }) => theme.gold[500]};
       p {
           padding: 0;
@@ -88,7 +88,7 @@ const Wrapper = styled.article`
     ${Date},
     ${City},
     ${Venue} {
-      font-weight: 700;
+
       font-size: 1rem;
       color:  ${({ theme }) => theme.white};
 

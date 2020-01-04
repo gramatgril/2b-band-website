@@ -48,6 +48,7 @@ const Wrapper = styled.section`
     width: 90vw;
 
     ${Title} {
+      letter-spacing: 2px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -79,20 +80,21 @@ const Wrapper = styled.section`
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      margin: 2rem 0 0 0;
+      margin: 1rem 0 0 0;
 
       ${Email}, ${Phone} {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         letter-spacing: 2px;
+        padding: 0;
 
         p {
-          font-size: 1.25rem;
+          font-size: 1rem;
         }
 
         .icon {
-          font-size: 1.25rem;
+          font-size: 1rem;
           margin: 0 1rem 0 0;
         }
       }
@@ -124,6 +126,15 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 1fr;
       ${Contacts} {
         margin: 0 0 0 2rem;
+        ${Email}, ${Phone} {
+          p {
+            font-size: 1.25rem;
+          }
+
+          .icon {
+            font-size: 1.25rem;
+          }
+        }
       }
     }
   }

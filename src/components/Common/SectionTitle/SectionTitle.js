@@ -14,13 +14,12 @@ SectionTitle.propTypes = propTypes;
 export default SectionTitle;
 
 const Title = styled.h1`
-  font-family: "Bowlby One SC";
+  /* font-family: "Shadows Into Light", cursive; */
   margin: 0 0 5rem 0;
-  font-size: 2rem;
   color: ${({ theme, color }) => (color ? color : theme.gold[500])};
   text-transform: uppercase;
-  letter-spacing: 8px;
-  white-space: nowrap;
+  letter-spacing: 4px;
+  /* white-space: wrap; */
 
   @media (min-width: 768px) {
     font-size: 2rem;

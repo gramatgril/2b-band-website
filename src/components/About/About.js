@@ -2,20 +2,12 @@ import React from "react";
 import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import Waves from "./../Common/Waves";
-import { theme } from "./../../styles/theme";
+
 import SectionTitle from "./../Common/SectionTitle";
 
 const getImages = graphql`
   {
-    aboutPageOne: file(relativePath: { eq: "aboutPageOne.jpg" }) {
-      image: childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    aboutPageTwo: file(relativePath: { eq: "aboutPageTwo.jpg" }) {
+    aboutImage: file(relativePath: { eq: "2b-welcome-cord.png" }) {
       image: childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -26,19 +18,21 @@ const getImages = graphql`
 `;
 
 const About = () => {
-  const { aboutPageOne, aboutPageTwo } = useStaticQuery(getImages);
+  const { aboutImage } = useStaticQuery(getImages);
 
   return (
     <Wrapper>
-      <Waves topColor={theme.blue[400]} bottomColor={theme.blue[400]}>
-        <SectionTitle title="kdo sva" color={theme.blue[500]} />
-        <ContentGrid>
+      <SectionTitle title="kdo sva" />
+      <ContentGrid>
+        <LeftColumn>
           <TextContainer>
             <p>
               2B je ime glasbenega dvojca bratov Gašperja in Primoža, ki ste ju
               zadnje mesece lahko bolje spoznali po skladbah »Najini koraki« ter
               »Kot morje« (nagrada na MMS 2019).
             </p>
+          </TextContainer>
+          <TextContainer>
             <p>
               Gašper in Primož svoje spevne melodije združujeta predvsem z
               elektro pop zvrstjo, v kateri sta našla svežo energijo in zagon.
@@ -47,14 +41,16 @@ const About = () => {
               pomladi in jo sčasoma vzpostavile kot prikupen radijski hit.
             </p>
           </TextContainer>
-          <ImageContainer>
-            <Img
-              fluid={aboutPageOne.image.fluid}
-              alt="2b live"
-              className="img"
-              imgStyle={{ objectFit: "contain", objectPosition: "50% 50%" }}
-            />
-          </ImageContainer>
+        </LeftColumn>
+        <ImageContainer>
+          <Img
+            fluid={aboutImage.image.fluid}
+            alt="kdo sva"
+            className="img"
+            imgStyle={{ objectFit: "contain", objectPosition: "50% 50%" }}
+          />
+        </ImageContainer>
+        <RightColumn>
           <TextContainer>
             <p>
               V preteklosti ste 2B tako lahko slišali že na velikih festivalskih
@@ -66,14 +62,6 @@ const About = () => {
               Koromandija).
             </p>
           </TextContainer>
-          <ImageContainer>
-            <Img
-              fluid={aboutPageTwo.image.fluid}
-              alt="2b live"
-              className="img"
-              imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
-            />
-          </ImageContainer>
           <TextContainer>
             <p>
               Novi album pričakujemo 2020 (Nika Records), na njem pa bosta
@@ -82,8 +70,8 @@ const About = () => {
               zasanjane in izrazito optimistične glasbe.
             </p>
           </TextContainer>
-        </ContentGrid>
-      </Waves>
+        </RightColumn>
+      </ContentGrid>
     </Wrapper>
   );
 };
@@ -93,50 +81,79 @@ export default About;
 const ContentGrid = styled.div``;
 const TextContainer = styled.article``;
 const ImageContainer = styled.div``;
+const LeftColumn = styled.div``;
+const RightColumn = styled.div``;
 
 const Wrapper = styled.section`
-  text-align: center;
-  background: ${({ theme }) => theme.gold[100]};
+  /* == MOBILE ==  */
   height: 100%;
-
-  .bottom-wave {
-    transform: translateY(20px);
-  }
-
-  .top-wave {
-    transform: translateY(-20px);
-  }
+  padding: 5rem 0;
+  text-align: center;
+  width: 90vw;
+  margin: 0 auto;
 
   ${ContentGrid} {
-    width: 90vw;
-    margin: 0 auto;
-  }
+    display: block;
 
-  ${TextContainer} {
-    p {
-      margin: 0 0 1.5rem 0;
+    ${LeftColumn}, ${RightColumn} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    ${TextContainer} {
+      border: 1px solid ${({ theme }) => theme.gold[300]};
+      border-radius: 8px;
       text-align: justify;
-      font-weight: 600;
+      padding: 0.5rem 1rem;
+      color: ${({ theme }) => theme.white};
+      font-size: 0.75rem;
+      margin: 1rem 0;
+      max-width: 600px;
+    }
+
+    ${ImageContainer} {
+      /* min-width: 400px; */
     }
   }
 
-  ${ImageContainer} {
-    height: auto;
-    width: 100%;
-    margin: 0 0 1rem 0;
+  @media (min-width: 576px) {
   }
 
+  @media (min-width: 900px) {
+  }
+
+  /* == DESKTOP == */
   @media (min-width: 1200px) {
+    width: 80vw;
+
     ${ContentGrid} {
       display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: 1fr 1fr;
-      width: 60vw;
-      margin: 0 auto;
+      grid-template-columns: 1fr 1fr 1fr;
 
-      ${TextContainer} :nth-child(5) {
-        grid-column: 1 / -1;
+      ${LeftColumn}, ${RightColumn} {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      ${TextContainer} {
+        border: 1px solid ${({ theme }) => theme.gold[300]};
+        border-radius: 8px;
+        text-align: justify;
+        padding: 0.5rem 1rem;
+        color: ${({ theme }) => theme.white};
+        font-size: 0.75rem;
+        margin: 2rem;
+      }
+
+      ${ImageContainer} {
+        min-width: 400px;
       }
     }
+  }
+
+  @media (min-width: 1440px) {
+    width: 60vw;
   }
 `;

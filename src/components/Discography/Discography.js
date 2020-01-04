@@ -43,7 +43,7 @@ const Discography = () => {
     <Wrapper>
       <div className="overlay">
         <div className="content">
-          <SectionTitle title="glasba" />
+          <SectionTitle title="muzika" />
           <DiscographyGrid>
             {albums &&
               albums.edges.map(({ node }) => (

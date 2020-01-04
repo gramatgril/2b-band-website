@@ -50,6 +50,7 @@ const Wrapper = styled.section`
     width: 90vw;
 
     ${Title} {
+      letter-spacing: 2px;
       display: flex;
       flex-direction: column;
       justify-content: center;
