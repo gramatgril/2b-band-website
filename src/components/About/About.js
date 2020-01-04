@@ -1,77 +1,63 @@
 import React from "react";
-import Img from "gatsby-image";
-import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
+import bcg from "../../images/probna.jpg";
 
 import SectionTitle from "./../Common/SectionTitle";
 
-const getImages = graphql`
-  {
-    aboutImage: file(relativePath: { eq: "2b-welcome-cord.png" }) {
-      image: childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
-
 const About = () => {
-  const { aboutImage } = useStaticQuery(getImages);
-
   return (
     <Wrapper>
-      <SectionTitle title="kdo sva" />
-      <ContentGrid>
-        <LeftColumn>
-          <TextContainer>
-            <p>
-              2B je ime glasbenega dvojca bratov Gašperja in Primoža, ki ste ju
-              zadnje mesece lahko bolje spoznali po skladbah »Najini koraki« ter
-              »Kot morje« (nagrada na MMS 2019).
-            </p>
-          </TextContainer>
-          <TextContainer>
-            <p>
-              Gašper in Primož svoje spevne melodije združujeta predvsem z
-              elektro pop zvrstjo, v kateri sta našla svežo energijo in zagon.
-              Prvo skladbo njune samostojne glasbene poti – »Najini koraki« – so
-              mnoge radijske postaje prepoznale kot spremljevalko letošnje
-              pomladi in jo sčasoma vzpostavile kot prikupen radijski hit.
-            </p>
-          </TextContainer>
-        </LeftColumn>
-        <ImageContainer>
-          <Img
-            fluid={aboutImage.image.fluid}
-            alt="kdo sva"
-            className="img"
-            imgStyle={{ objectFit: "contain", objectPosition: "50% 50%" }}
-          />
-        </ImageContainer>
-        <RightColumn>
-          <TextContainer>
-            <p>
-              V preteklosti ste 2B tako lahko slišali že na velikih festivalskih
-              odrih Schengenfesta in Urbanega Dejanja kot tudi v dvoranah
-              Cankarjevega doma in Slovenske filharmonije. Z letošnjim letom
-              Gašper in Primož svojo glasbeno pot nadaljujeta kot prenovljen
-              duet, na njunih nastopih pa ob novih skladbah lahko slišite tudi
-              marsikatere odmeve njihovih prvih dveh albumov (B2 in
-              Koromandija).
-            </p>
-          </TextContainer>
-          <TextContainer>
-            <p>
-              Novi album pričakujemo 2020 (Nika Records), na njem pa bosta
-              Gašper in Primož predstavila tisto, kar ju neizbrisno povezuje:
-              skromnost ter strast do ustvarjanja sodobne, čustvene, rahlo
-              zasanjane in izrazito optimistične glasbe.
-            </p>
-          </TextContainer>
-        </RightColumn>
-      </ContentGrid>
+      <div className="overlay">
+        <div className="content">
+          <SectionTitle title="kdo sva" />
+          <ContentGrid>
+            <LeftColumn>
+              <TextContainer>
+                <p>
+                  <span>2B</span> je ime glasbenega dvojca bratov Gašperja in
+                  Primoža, ki ste ju zadnje mesece lahko bolje spoznali po
+                  skladbah <span>»Najini koraki«</span> ter{" "}
+                  <span>»Kot morje«</span> (nagrada na MMS 2019).
+                </p>
+              </TextContainer>
+              <TextContainer>
+                <p>
+                  <span>Gašper</span> in <span>Primož</span> svoje spevne
+                  melodije združujeta predvsem z elektro pop zvrstjo, v kateri
+                  sta našla svežo energijo in zagon. Prvo skladbo njune
+                  samostojne glasbene poti – <span>»Najini koraki«</span> – so
+                  mnoge radijske postaje prepoznale kot spremljevalko letošnje
+                  pomladi in jo sčasoma vzpostavile kot prikupen radijski hit.
+                </p>
+              </TextContainer>
+            </LeftColumn>
+
+            <RightColumn>
+              <TextContainer>
+                <p>
+                  V preteklosti ste <span>2B</span> tako lahko slišali že na
+                  velikih festivalskih odrih Schengenfesta in Urbanega Dejanja
+                  kot tudi v dvoranah Cankarjevega doma in Slovenske
+                  filharmonije. Z letošnjim letom <span>Gašper</span> in{" "}
+                  <span>Primož </span>svojo glasbeno pot nadaljujeta kot
+                  prenovljen duet, na njunih nastopih pa ob novih skladbah lahko
+                  slišite tudi marsikatere odmeve njihovih prvih dveh albumov (
+                  <span>B2</span> in <span>Koromandija</span>).
+                </p>
+              </TextContainer>
+              <TextContainer>
+                <p>
+                  Novi album pričakujemo 2020 (Nika Records), na njem pa bosta{" "}
+                  <span>Gašper</span> in <span>Primož</span> predstavila tisto,
+                  kar ju neizbrisno povezuje: skromnost ter strast do
+                  ustvarjanja sodobne, čustvene, rahlo zasanjane in izrazito
+                  optimistične glasbe.
+                </p>
+              </TextContainer>
+            </RightColumn>
+          </ContentGrid>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -80,17 +66,30 @@ export default About;
 
 const ContentGrid = styled.div``;
 const TextContainer = styled.article``;
-const ImageContainer = styled.div``;
+
 const LeftColumn = styled.div``;
 const RightColumn = styled.div``;
 
 const Wrapper = styled.section`
   /* == MOBILE ==  */
   height: 100%;
-  padding: 5rem 0;
   text-align: center;
-  width: 90vw;
-  margin: 0 auto;
+  background-image: url(${bcg});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+  }
+
+  .content {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5rem 0;
+  }
 
   ${ContentGrid} {
     display: block;
@@ -102,34 +101,30 @@ const Wrapper = styled.section`
     }
 
     ${TextContainer} {
-      border: 1px solid ${({ theme }) => theme.gold[300]};
+      color: ${({ theme }) => theme.grey[100]};
       border-radius: 8px;
       text-align: justify;
-      padding: 0.5rem 1rem;
-      color: ${({ theme }) => theme.white};
-      font-size: 0.75rem;
-      margin: 1rem 0;
+      margin: 1rem 2rem;
       max-width: 600px;
+      font-size: 0.75rem;
+
+      span {
+        font-weight: 600;
+        color: ${({ theme }) => theme.gold[300]};
+      }
     }
-
-    ${ImageContainer} {
-      /* min-width: 400px; */
-    }
-  }
-
-  @media (min-width: 576px) {
-  }
-
-  @media (min-width: 900px) {
   }
 
   /* == DESKTOP == */
   @media (min-width: 1200px) {
-    width: 80vw;
+    height: 100vh;
+    .content {
+      width: 80vw;
+    }
 
     ${ContentGrid} {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 
       ${LeftColumn}, ${RightColumn} {
         display: flex;
@@ -138,22 +133,15 @@ const Wrapper = styled.section`
       }
 
       ${TextContainer} {
-        border: 1px solid ${({ theme }) => theme.gold[300]};
-        border-radius: 8px;
-        text-align: justify;
-        padding: 0.5rem 1rem;
-        color: ${({ theme }) => theme.white};
-        font-size: 0.75rem;
-        margin: 2rem;
-      }
-
-      ${ImageContainer} {
-        min-width: 400px;
+        font-size: 1rem;
+        margin: 3rem 2rem;
       }
     }
   }
 
   @media (min-width: 1440px) {
-    width: 60vw;
+    .content {
+      width: 60vw;
+    }
   }
 `;

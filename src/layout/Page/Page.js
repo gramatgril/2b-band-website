@@ -19,8 +19,8 @@ const Page = () => {
       <TourDates />
       <Newsletter />
       <Discography />
-      <Booking />
       <About />
+      <Booking />
       <Gallery />
     </Wrapper>
   );

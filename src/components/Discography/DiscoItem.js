@@ -46,8 +46,12 @@ const DiscoItem = ({ album }) => {
           imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
       </ImageContainer>
-      <Title>{title}</Title>
-      <Date>{date}</Date>
+      <Title>
+        <h2>{title}</h2>
+      </Title>
+      <Date>
+        <p>{date}</p>
+      </Date>
       <Icons>
         <AnchorLink
           href={youtubeLink}
@@ -90,7 +94,7 @@ DiscoItem.propTypes = propTypes;
 export default DiscoItem;
 
 const ImageContainer = styled.div``;
-const Title = styled.div``;
+const Title = styled.h1``;
 const Date = styled.div``;
 const Icons = styled.div``;
 const AnchorLink = styled.a``;
@@ -113,7 +117,7 @@ const Wrapper = styled.article`
 
   ${Title} {
     text-transform: uppercase;
-    margin: 0.5rem 0 0 0;
+    margin: 0.5rem 0;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
