@@ -49,6 +49,7 @@ const Wrapper = styled.article`
       color:  ${({ theme }) => theme.white};
 
       p {
+        font-size: 1.25rem;
         letter-spacing: 1px;
         padding: 0 0 0.25rem 0;
         margin: 0;
@@ -57,7 +58,7 @@ const Wrapper = styled.article`
     }
 
     ${Date} {
-
+      font-weight: 700;
       text-align: left;
       grid-column: 1 / -1;
 

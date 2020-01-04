@@ -14,7 +14,6 @@ SectionTitle.propTypes = propTypes;
 export default SectionTitle;
 
 const Title = styled.h1`
-  /* font-family: "Shadows Into Light", cursive; */
   margin: 0 0 5rem 0;
   color: ${({ theme, color }) => (color ? color : theme.gold[500])};
   text-transform: uppercase;
