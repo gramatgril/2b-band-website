@@ -1,4 +1,4 @@
 import * as validators from "./formValidation";
-import { footerLinks } from "./links";
+import { navLinks } from "./links";
 
-export { validators, footerLinks };
+export { validators, navLinks };

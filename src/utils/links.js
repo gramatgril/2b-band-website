@@ -6,9 +6,10 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
+  FaSpotify,
 } from "react-icons/fa";
 
-export const footerLinks = [
+export const navLinks = [
   {
     id: 0,
     path: "https://www.facebook.com/2bband.si",
@@ -30,13 +31,14 @@ export const footerLinks = [
     icon: <FaYoutube className="icon" />,
   },
   {
-    id: 4,
-    path: "https://soundcloud.com/glasbena-skupina-2b",
-    icon: <FaSoundcloud className="icon" />,
+    id: 5,
+    path: "https://open.spotify.com/artist/7B6CZC5KPxMr6raCoSjoqv",
+    icon: <FaSpotify className="icon" />,
   },
   {
-    id: 5,
-    path: "https://2bband.bandcamp.com/releases",
-    icon: <FaBandcamp className="icon" />,
+    id: 4,
+    path:
+      "https://www.deezer.com/en/artist/1885041?app_id=140685&utm_source=lf&utm_content=dc1e0af90d54ab9fb7370309145bb436",
+    icon: <i className="cib-deezer icon"></i>,
   },
 ];

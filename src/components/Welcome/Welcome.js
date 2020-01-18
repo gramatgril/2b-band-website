@@ -1,16 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-
+import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
+
 import desktopBcg from "../../images/2b-bcg5.jpg";
 import mobileBcg from "../../images/2b-welcome-cord.png";
 
 const getImages = graphql`
   {
-    logo: file(relativePath: { eq: "band-logo.png" }) {
+    desktopImage: file(relativePath: { eq: "2b-bcg5.jpg" }) {
       image: childImageSharp {
-        fluid {
+        fluid(quality: 100, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mobileImage: file(relativePath: { eq: "mobileBcgRed.png" }) {
+      image: childImageSharp {
+        fluid(quality: 100, maxWidth: 576) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -18,52 +26,40 @@ const getImages = graphql`
   }
 `;
 
-const Welcome = () => {
-  const { logo } = useStaticQuery(getImages);
+const Welcome = ({ className }) => {
+  const { mobileImage, desktopImage } = useStaticQuery(getImages);
+
+  const sources = [
+    mobileImage.image.fluid,
+    {
+      ...desktopImage.image.fluid,
+      media: `(min-width: 576px)`,
+    },
+  ];
+
   return (
     <Wrapper>
-      {/* <Logo>
-        <Img
-          fluid={logo.image.fluid}
-          className="img"
-          imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
-        />
-      </Logo> */}
+      {/* <Background tag="div" fluid={sources} className={className} /> */}
+      <Img fluid={sources} alt="2b" className="img" imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}/>
     </Wrapper>
   );
 };
 
 export default Welcome;
 
-const ImageContainer = styled.div``;
-const Logo = styled.div``;
+const Background = styled(BackgroundImage)``;
 
 const Wrapper = styled.section`
   height: 100vh;
-  background-image: url(${desktopBcg});
-  background-size: cover;
 
-  ${Logo} {
-    width: 400px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+  ${Background} {
+    height: 100%;
+    width: 100%;
+    background-size: auto;
+    background-color: transparent;
+    background-position: center;
   }
+
   @media (min-width: 576px) {
-    ${ImageContainer} {
-      /* max-width: 90vw; */
-    }
-  }
-
-  @media (min-width: 900px) {
-    ${ImageContainer} {
-      /* max-width: 80vw; */
-    }
-  }
-
-  @media (min-width: 1200px) {
-    ${ImageContainer} {
-      /* max-width: 30vw; */
-    }
   }
 `;

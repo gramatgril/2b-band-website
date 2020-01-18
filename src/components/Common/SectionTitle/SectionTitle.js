@@ -26,7 +26,7 @@ const Title = styled.h1`
   }
 
   @media (min-width: 1200px) {
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 0 0 4rem 0;
   }
 `;

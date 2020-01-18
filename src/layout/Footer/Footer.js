@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { footerLinks as links } from "../../utils";
+import { navLinks as links } from "../../utils";
 
 const Footer = () => {
   return (
@@ -35,7 +35,6 @@ export default Footer;
 const Icons = styled.div``;
 const InfoBar = styled.div``;
 const Content = styled.div``;
-
 const AnchorLink = styled.a``;
 
 const Wrapper = styled.footer`
@@ -62,6 +61,7 @@ const Wrapper = styled.footer`
     font-size: 2rem;
 
     ${AnchorLink} {
+      text-decoration: none;
       margin: 0 0.5rem;
       cursor: pointer;
       color: ${({ theme }) => theme.gold[500]};

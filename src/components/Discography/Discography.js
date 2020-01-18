@@ -12,12 +12,14 @@ const getAlbums = graphql`
         node {
           id: contentful_id
           title
-          date(formatString: "DD MMM YYYY")
+          date(formatString: "YYYY")
           youtubeLink
           soundcloudLink
           appleLink
           spotifyLink
           bandcampLink
+          deezerLink
+          tidalLink
           image {
             fluid(maxWidth: 300, maxHeight: 300, quality: 100) {
               ...GatsbyContentfulFluid_tracedSVG
@@ -45,14 +47,6 @@ const Discography = () => {
         <div className="content">
           <SectionTitle title="muzika" />
           <DiscographyGrid>
-            {albums &&
-              albums.edges.map(({ node }) => (
-                <DiscoItem key={node.id} album={node} />
-              ))}
-            {albums &&
-              albums.edges.map(({ node }) => (
-                <DiscoItem key={node.id} album={node} />
-              ))}
             {albums &&
               albums.edges.map(({ node }) => (
                 <DiscoItem key={node.id} album={node} />

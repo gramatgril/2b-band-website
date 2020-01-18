@@ -7,7 +7,7 @@ const Newsletter = () => {
     <Wrapper>
       <Grid>
         <Title>
-          <h1>želiš več informacij?</h1>
+          <h1>te kaj zanima?</h1>
           <h2>Naroči se na novice in bodi na tekočem!</h2>
         </Title>
         <NewsletterForm>

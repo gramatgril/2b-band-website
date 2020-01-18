@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
+import deezerIcon from "../../images/deezer.png";
+import coreui from "@coreui/icons";
+
 import {
   FaYoutube,
   FaSoundcloud,
@@ -21,6 +24,8 @@ const propTypes = {
     appleLink: PropTypes.string,
     spotifyLink: PropTypes.string,
     bandcampLink: PropTypes.string,
+    deezerLink: PropTypes.string,
+    tidalLink: PropTypes.string,
   }).isRequired,
 };
 
@@ -34,6 +39,8 @@ const DiscoItem = ({ album }) => {
     appleLink,
     spotifyLink,
     bandcampLink,
+    deezerLink,
+    tidalLink,
   } = album;
 
   return (
@@ -61,28 +68,20 @@ const DiscoItem = ({ album }) => {
           <FaYoutube className="icon" />
         </AnchorLink>
         <AnchorLink
-          href={soundcloudLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaSoundcloud className="icon" />
-        </AnchorLink>
-        <AnchorLink href={appleLink} target="_blank" rel="noopener noreferrer">
-          <FaApple className="icon" />
-        </AnchorLink>
-        <AnchorLink
           href={spotifyLink}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaSpotify className="icon" />
         </AnchorLink>
-        <AnchorLink
-          href={bandcampLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaBandcamp className="icon" />
+        <AnchorLink href={appleLink} target="_blank" rel="noopener noreferrer">
+          <FaApple className="icon" />
+        </AnchorLink>
+        <AnchorLink href={deezerLink} target="_blank" rel="noopener noreferrer">
+          <i className="cib-deezer icon"></i>
+        </AnchorLink>
+        <AnchorLink href={tidalLink} target="_blank" rel="noopener noreferrer">
+          <i className="cib-tidal icon"></i>
         </AnchorLink>
       </Icons>
     </Wrapper>
@@ -94,7 +93,7 @@ DiscoItem.propTypes = propTypes;
 export default DiscoItem;
 
 const ImageContainer = styled.div``;
-const Title = styled.h1``;
+const Title = styled.div``;
 const Date = styled.div``;
 const Icons = styled.div``;
 const AnchorLink = styled.a``;
@@ -135,6 +134,7 @@ const Wrapper = styled.article`
     ${AnchorLink} {
       margin: 0 0.25rem;
       cursor: pointer;
+      text-decoration: none;
 
       .icon {
         color: ${({ theme }) => theme.gold[500]};

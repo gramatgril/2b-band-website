@@ -81,7 +81,7 @@ const Wrapper = styled.section`
   background-size: cover;
 
   .overlay {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     height: 100%;
   }
 
@@ -107,6 +107,9 @@ const Wrapper = styled.section`
       margin: 1rem 2rem;
       max-width: 600px;
       font-size: 0.75rem;
+      border: 1px solid ${({ theme }) => theme.grey[300]};
+      padding: 0.5rem;
+      background: rgba(248, 249, 250, 0.1);
 
       span {
         font-weight: 600;
@@ -133,8 +136,11 @@ const Wrapper = styled.section`
       }
 
       ${TextContainer} {
+        border: 1px solid ${({ theme }) => theme.grey[300]};
         font-size: 1rem;
+        padding: 1rem;
         margin: 3rem 2rem;
+        background: rgba(248, 249, 250, 0.1);
       }
     }
   }
