@@ -12,14 +12,14 @@ const getImages = graphql`
     desktopImage: file(relativePath: { eq: "2b-bcg5.jpg" }) {
       image: childImageSharp {
         fluid(quality: 100, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     mobileImage: file(relativePath: { eq: "mobileBcgRed.png" }) {
       image: childImageSharp {
         fluid(quality: 100, maxWidth: 576) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
@@ -40,7 +40,12 @@ const Welcome = ({ className }) => {
   return (
     <Wrapper>
       {/* <Background tag="div" fluid={sources} className={className} /> */}
-      <Img fluid={sources} alt="2b" className="img" imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}/>
+      <Img
+        fluid={sources}
+        alt="2b"
+        className="img"
+        imgStyle={{ objectFit: "cover", objectPosition: "50% 50%" }}
+      />
     </Wrapper>
   );
 };
@@ -50,16 +55,14 @@ export default Welcome;
 const Background = styled(BackgroundImage)``;
 
 const Wrapper = styled.section`
-  height: 100vh;
+  height: 70vh;
 
-  ${Background} {
+  .img {
     height: 100%;
     width: 100%;
-    background-size: auto;
-    background-color: transparent;
-    background-position: center;
   }
 
   @media (min-width: 576px) {
+    height: 100vh;
   }
 `;

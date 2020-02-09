@@ -28,7 +28,7 @@ const Gallery = () => {
   const { gallery } = useStaticQuery(getImages);
 
   return (
-    <Wrapper>
+    <Wrapper id="gallery">
       <SectionTitle title="pred objektivom" />
       <GalleryGrid>
         {gallery.edges.map(({ node }) => (

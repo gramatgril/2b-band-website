@@ -1,15 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby";
 import { FiMail, FiPhone } from "react-icons/fi";
 
+const getPressKit = graphql`
+  query {
+    file(relativePath: { eq: "Press kit 2B.zip" }) {
+      publicURL
+      name
+    }
+  }
+`;
+
 const Booking = () => {
+  const data = useStaticQuery(getPressKit);
+
   return (
     <Wrapper>
       <Grid>
         <Title>
           <h1>booking in Press kit</h1>
           <h2>
-            Klikni za povezavo do <a href="/">press kita</a>.
+            Klikni za povezavo do <a href={data.file.publicURL}>press kita</a>.
           </h2>
         </Title>
         <Contacts>

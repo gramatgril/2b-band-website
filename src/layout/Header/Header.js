@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { navLinks as links } from "../../utils";
+import Menu from "./Menu";
+import Burger from "./Burger";
 
 const getImages = graphql`
   {
@@ -18,12 +20,18 @@ const getImages = graphql`
 
 const Header = () => {
   const { logo } = useStaticQuery(getImages);
+  const [open, setOpen] = useState(false);
+  const node = useRef();
 
   return (
     <Wrapper>
-      <Logo>
+      <Logo open={open}>
         <Img fluid={logo.image.fluid} alt="2b" className="img" />
       </Logo>
+      <div className="mobile-nav" ref={node}>
+        <Menu open={open} setOpen={setOpen} links={links} />
+        <Burger open={open} setOpen={setOpen} />
+      </div>
       <Links>
         {links.map(({ id, path, icon }) => (
           <AnchorLink
@@ -47,7 +55,6 @@ const Logo = styled.div``;
 const Links = styled.div``;
 
 const Wrapper = styled.nav`
-  /* width: 100vw; */
   height: 4rem;
   background: transparent;
   position: absolute;
@@ -56,13 +63,17 @@ const Wrapper = styled.nav`
   width: 100%;
   z-index: 1;
 
+  .mobile-nav {
+    display: none;
+  }
+
   display: flex;
   justify-content: flex-end;
 
   ${Logo} {
     display: none;
-    height: 100px;
-    width: 100px;
+    height: 4rem;
+    width: 4rem;
   }
 
   ${Links} {
@@ -83,9 +94,16 @@ const Wrapper = styled.nav`
   }
 
   @media (max-width: 576px) {
-    justify-content: center;
+    justify-content: flex-end;
+
+    .mobile-nav {
+      display: flex;
+    }
 
     ${Logo} {
+      display: none;
+      left: 40%;
+      position: absolute;
       display: block;
     }
 

@@ -39,8 +39,6 @@ const AnchorLink = styled.a``;
 
 const Wrapper = styled.footer`
   min-height: 30vh;
-  /* background: ${({ theme }) => theme.blue[500]}; */
-  /* background: ${({ theme }) => theme.white}; */
   align-items: center;
   display: flex;
   flex-direction: column;

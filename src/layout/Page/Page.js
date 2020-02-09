@@ -18,7 +18,6 @@ const Page = () => {
       <Header />
       <Welcome />
       <PromotedVideo />
-
       <TourDates />
       <Newsletter />
       <Discography />

@@ -95,7 +95,6 @@ const Wrapper = styled.article`
       color:  ${({ theme }) => theme.white};
 
       p {
-
         letter-spacing: 1px;
         white-space: normal;
       }

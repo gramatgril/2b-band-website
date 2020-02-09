@@ -9,6 +9,7 @@ const PressKitPanel = () => {
     <Wrapper>
       <Title>
         <h2>Link do presskita</h2>
+        <a href="../../../../Press kit 2B">Download link</a>
       </Title>
     </Wrapper>
   );

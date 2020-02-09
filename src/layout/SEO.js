@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, title }) {
   const { image, siteUrl, siteTitle, siteDesc } = site.siteMetadata;
 
   return (
-    <Helmet htmlAttributes={{ lang: "sl" }} title={`${title} | ${siteTitle}`}>
+    <Helmet htmlAttributes={{ lang: "sl" }} title={`${siteTitle}`}>
       <meta name="description" content={description || siteDesc} />
       <meta name="image" content={image} />
       {/* Facebook card */}

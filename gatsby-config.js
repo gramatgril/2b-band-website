@@ -9,6 +9,7 @@ module.exports = {
     author: `@praecorloth`,
     image: `/image.jpg`,
     siteUrl: `https://www.google.com`,
+    icon: "/favicon.ico",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

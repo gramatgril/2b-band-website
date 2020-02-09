@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
 const Newsletter = () => {
+  const [newsletterStatus, setNewsletterStatus] = useState(false);
+
+  const handleFormSubmit = e => {
+    e.preventDefault();
+
+    setNewsletterStatus(true);
+  };
+
   return (
     <Wrapper>
       <Grid>
@@ -10,17 +18,23 @@ const Newsletter = () => {
           <h1>te kaj zanima?</h1>
           <h2>Naroči se na novice in bodi na tekočem!</h2>
         </Title>
-        <NewsletterForm>
-          <Input>
-            <InputField placeholder="E-mail naslov" />
-            <Button type="submit">Naroči se</Button>
-          </Input>
-          <TermsLink>
-            <StyledLink to="/pravna-obvestila" className="link">
-              Pogoji
-            </StyledLink>
-          </TermsLink>
-        </NewsletterForm>
+        {newsletterStatus ? (
+          <SuccessMessage>
+            <h2>Prijava je bila uspešna!</h2>
+          </SuccessMessage>
+        ) : (
+          <NewsletterForm onSubmit={e => handleFormSubmit(e)}>
+            <Input>
+              <InputField placeholder="E-mail naslov" />
+              <Button type="submit">Naroči se</Button>
+            </Input>
+            <TermsLink>
+              <StyledLink to="/pravna-obvestila" className="link">
+                Pogoji
+              </StyledLink>
+            </TermsLink>
+          </NewsletterForm>
+        )}
       </Grid>
     </Wrapper>
   );
@@ -36,9 +50,14 @@ const InputField = styled.input``;
 const TermsLink = styled.div``;
 const Button = styled.button``;
 const StyledLink = styled(Link)``;
+const SuccessMessage = styled.div``;
 
 const Wrapper = styled.section`
   background: ${({ theme }) => theme.gold[500]};
+
+  ${SuccessMessage} {
+    margin: 2rem 0 0 0;
+  }
 
   ${Grid} {
     display: flex;
