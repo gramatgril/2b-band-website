@@ -79,6 +79,9 @@ const Wrapper = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
 
   .overlay {
     background: rgba(0, 0, 0, 0.6);
