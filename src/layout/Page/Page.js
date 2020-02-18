@@ -19,7 +19,7 @@ const Page = () => {
       <Welcome />
       <PromotedVideo />
       <TourDates />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Discography />
       <About />
       <Booking />

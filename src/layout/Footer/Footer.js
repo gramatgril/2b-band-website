@@ -38,7 +38,7 @@ const Content = styled.div``;
 const AnchorLink = styled.a``;
 
 const Wrapper = styled.footer`
-  min-height: 30vh;
+  min-height: 20vh;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,7 @@ const Wrapper = styled.footer`
   align-items: center;
 
   p {
+    color: ${({ theme }) => theme.gold[900]};
     margin: 0;
   }
 

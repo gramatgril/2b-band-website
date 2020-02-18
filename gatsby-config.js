@@ -4,11 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `2B Band`,
-    description: `Landing page za band 2B`,
+    title: `2bband.si`,
+    description: `2b je electric-organic duo bratov Gašperja in Primoža`,
     author: `@praecorloth`,
-    image: `/image.jpg`,
-    siteUrl: `https://www.google.com`,
+    image: `/2b-bcg5.jpg`,
+    siteUrl: `https://2bband.netlify.com`,
     icon: "/favicon.ico",
   },
   plugins: [
@@ -37,20 +37,20 @@ module.exports = {
       },
     },
     // PWA and Offline plugins
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Site name`,
-        short_name: `Short`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {},
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Site name`,
+    //     short_name: `Short`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {},
+    // },
   ],
 };

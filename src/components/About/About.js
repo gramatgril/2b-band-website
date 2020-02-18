@@ -23,11 +23,12 @@ const About = () => {
               <TextContainer>
                 <p>
                   <span>Gašper</span> in <span>Primož</span> svoje spevne
-                  melodije združujeta predvsem z elektro pop zvrstjo, v kateri
-                  sta našla svežo energijo in zagon. Prvo skladbo njune
+                  melodije združujeta predvsem z electric organic zvrstjo, v
+                  kateri sta našla svežo energijo in zagon. Prvo skladbo njune
                   samostojne glasbene poti – <span>»Najini koraki«</span> – so
-                  mnoge radijske postaje prepoznale kot spremljevalko letošnje
-                  pomladi in jo sčasoma vzpostavile kot prikupen radijski hit.
+                  mnoge radijske postaje prepoznale kot spremljevalko
+                  lanskoletne pomladi in jo sčasoma vzpostavile kot prikupen
+                  radijski hit.
                 </p>
               </TextContainer>
             </LeftColumn>
@@ -47,7 +48,7 @@ const About = () => {
               </TextContainer>
               <TextContainer>
                 <p>
-                  Novi album pričakujemo 2020 (Nika Records), na njem pa bosta{" "}
+                  Novi album pričakujemo 2020, na njem pa bosta{" "}
                   <span>Gašper</span> in <span>Primož</span> predstavila tisto,
                   kar ju neizbrisno povezuje: skromnost ter strast do
                   ustvarjanja sodobne, čustvene, rahlo zasanjane in izrazito

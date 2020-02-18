@@ -13,12 +13,16 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.gold[500]};
   letter-spacing: 1px;
 
+  h1 {
+    margin-bottom: 0;
+  }
+
   &:hover {
-    background: ${({ theme }) => theme.blue[700]};
+    background: ${({ theme }) => theme.gold[700]};
   }
 
   &:active {
     color: ${({ theme }) => theme.gold[300]};
-    background: ${({ theme }) => theme.blue[300]};
+    background: ${({ theme }) => theme.gold[300]};
   }
 `;
