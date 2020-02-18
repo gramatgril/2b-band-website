@@ -30,7 +30,7 @@ function SEO({ description, lang, meta, title }) {
 
   return (
     <Helmet htmlAttributes={{ lang: "sl" }} title={`${siteTitle}`}>
-      <meta name="description" content={description || siteDesc} />
+      <meta name="description" content={siteDesc} />
       <meta name="image" content={image} />
       {/* Facebook card */}
       <meta property="og:url" content={siteUrl} />
@@ -49,9 +49,9 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  title: `Title`,
+  title: `2bband.si`,
   lang: `sl`,
-  description: `Description`,
+  description: `2b je electric-organic duo bratov Gašperja in Primoža`,
 };
 
 SEO.propTypes = propTypes;
