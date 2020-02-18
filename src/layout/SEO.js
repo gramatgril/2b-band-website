@@ -28,6 +28,8 @@ function SEO({ description, lang, meta, title }) {
 
   const { image, siteUrl, siteTitle, siteDesc } = site.siteMetadata;
 
+  console.log(image);
+
   return (
     <Helmet htmlAttributes={{ lang: "sl" }} title={`${siteTitle}`}>
       <meta name="description" content={siteDesc} />
@@ -35,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
       {/* Facebook card */}
       <meta property="og:url" content={siteUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={siteTitle} />
+      <meta property="og:title" content="2bband.si" />
       <meta property="og:description" content={siteDesc} />
       <meta property="og:image" content={`${siteUrl}${image}`} />
       <meta property="og:image:width" content="400" />
