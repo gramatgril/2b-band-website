@@ -28,8 +28,6 @@ function SEO({ description, lang, meta, title }) {
 
   const { image, siteUrl, siteTitle, siteDesc } = site.siteMetadata;
 
-  console.log(image);
-
   return (
     <Helmet htmlAttributes={{ lang: "sl" }} title={`${siteTitle}`}>
       <meta name="description" content={siteDesc} />
