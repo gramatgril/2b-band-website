@@ -24,7 +24,7 @@ const Footer = () => {
         <Link to="/pravna-obvestila" className="link">
           Pravna obvestila
         </Link>
-        <p>© 2005-2019 2B, vse pravice pridržane </p>
+        <p>© 2005-2020 2B, vse pravice pridržane </p>
       </InfoBar>
     </Wrapper>
   );
