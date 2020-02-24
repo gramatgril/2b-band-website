@@ -48,13 +48,13 @@ const Wrapper = styled.section`
   text-align: center;
   height: 100vh;
   background-image: url(${bcgImg});
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
+  background-repeat: no-repeat;
   .overlay {
     background: rgba(33, 33, 33, 0.7);
     height: 100%;
