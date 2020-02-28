@@ -14,7 +14,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
   data.images.edges.forEach(({ node }) => {
     createPage({
       path: `/${node.slug}`,

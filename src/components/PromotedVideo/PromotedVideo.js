@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import YoutubeEmbedVideo from "youtube-embed-video";
 
-const PromotedVideo = () => (
+const PromotedVideo = ({ videoId }) => (
   <Wrapper>
     <StyledVideo
-      videoId="2nu3zr9CFzk"
+      videoId={videoId}
       suggestions={false}
       showInfo={false}
       controls={false}

@@ -17,7 +17,8 @@ const Page = () => {
     <Wrapper>
       <Header />
       <Welcome />
-      <PromotedVideo />
+      <PromotedVideo videoId={"dgojswYx4X4"} />
+      <PromotedVideo videoId={"2nu3zr9CFzk"} />
       <TourDates />
       {/* <Newsletter /> */}
       <Discography />
