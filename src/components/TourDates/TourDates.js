@@ -46,7 +46,7 @@ const TourDatesGrid = styled.div``;
 
 const Wrapper = styled.section`
   text-align: center;
-  height: 100vh;
+  height: 100%;
   background-image: url(${bcgImg});
   /* background-attachment: fixed; */
   background-position: center;
