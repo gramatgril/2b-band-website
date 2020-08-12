@@ -31,7 +31,7 @@ const Booking = () => {
           </Email>
           <Phone>
             <FiMail className="icon" />
-            <p>2bband.si@gmail.si</p>
+            <p>2bband.si@gmail.com</p>
           </Phone>
         </Contacts>
       </Grid>
