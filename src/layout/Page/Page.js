@@ -19,6 +19,7 @@ const Page = () => {
       <Welcome />
       <PromotedVideo videoId={"ga0Sj9kGBuo"} />
       <PromotedVideo videoId={"dgojswYx4X4"} />
+      <Newsletter />
       <TourDates />
       {/* <Newsletter /> */}
       <Discography />

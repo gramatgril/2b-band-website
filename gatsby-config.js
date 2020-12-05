@@ -36,6 +36,12 @@ module.exports = {
         pathToConfigModule: `src/styles/typography`,
       },
     },
+      {
+        resolve: 'gatsby-plugin-mailchimp',
+        options: {
+            endpoint: process.env.MAILCHIMP_ENDPOINT,
+        },
+    },
     // PWA and Offline plugins
     // {
     //   resolve: `gatsby-plugin-manifest`,

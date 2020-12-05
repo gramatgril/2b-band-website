@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import addToMailchimp from "gatsby-plugin-mailchimp";
 
 const Newsletter = () => {
   const [newsletterStatus, setNewsletterStatus] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = async e => {
     e.preventDefault();
+
+    const res = await addToMailchimp(email);
+
+    if (res.result === "success") {
+      setMessage("Prijava je bila uspešna!");
+    } else {
+      setMessage("Prišlo je do napake, poskusi znova!");
+    }
 
     setNewsletterStatus(true);
   };
@@ -19,13 +30,17 @@ const Newsletter = () => {
           <h2>Naroči se na novice in bodi na tekočem!</h2>
         </Title>
         {newsletterStatus ? (
-          <SuccessMessage>
-            <h2>Prijava je bila uspešna!</h2>
+          <SuccessMessage onClick={() => setNewsletterStatus(false)}>
+            <h2>{message}</h2>
           </SuccessMessage>
         ) : (
           <NewsletterForm onSubmit={e => handleFormSubmit(e)}>
             <Input>
-              <InputField placeholder="E-mail naslov" />
+              <InputField
+                placeholder="E-mail naslov"
+                onChange={e => setEmail(e.target.value)}
+                type="email"
+              />
               <Button type="submit">Naroči se</Button>
             </Input>
             <TermsLink>
