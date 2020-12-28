@@ -19,8 +19,8 @@ const propTypes = {
 
 function encode(data) {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 // "https://ggtrgovina.netlify.com/.netlify/functions/sendMail"
@@ -31,20 +31,19 @@ const path = "http://localhost:9000/sendMail";
 const ContactForm = ({ setFormStatus }) => {
   const { register, errors } = useForm({ mode: "onBlur" });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        "form-name": form.getAttribute("name"),
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
-  }
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error));
   };
 
   return (
