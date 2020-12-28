@@ -23,7 +23,7 @@ const Title = styled.div``;
 const Button = styled(Link)``;
 
 const Wrapper = styled.section`
-  background: ${({ theme }) => theme.grey[100]};
+  background: ${({ theme }) => theme.red[500]};
 
   ${Grid} {
     display: flex;

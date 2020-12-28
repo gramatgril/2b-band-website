@@ -7,6 +7,7 @@ import ContactForm from "./ContactForm";
 import MailConfirmation from "./MailConfirmation";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import MerchForm from "./MerchForm";
 
 const query = graphql`
   query {
@@ -87,7 +88,7 @@ const MerchPage = () => {
       <div className="form-segment">
         {/* Renders confirmation component when mail is sent*/}
         {!formStatus.statusCode ? (
-          <ContactForm setFormStatus={setFormStatus} />
+          <MerchForm />
         ) : (
           <MailConfirmation formStatus={formStatus} />
         )}
