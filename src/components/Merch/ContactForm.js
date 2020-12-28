@@ -17,6 +17,12 @@ const propTypes = {
   setFormStatus: PropTypes.func.isRequired,
 };
 
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 // "https://ggtrgovina.netlify.com/.netlify/functions/sendMail"
 // "http://localhost:9000/sendMail"
 const path = "http://localhost:9000/sendMail";
