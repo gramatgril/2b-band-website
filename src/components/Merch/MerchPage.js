@@ -44,7 +44,7 @@ const MerchPage = () => {
         <h1>MERCH</h1>
       </TitleText>
       <ProductContainer>
-        <h2>Moška majica 2B - 10€</h2>
+        <h2>Moška majica 2B - 12€</h2>
         <StyledImage>
           <Img
             fluid={maleShirt.image.fluid}
@@ -54,7 +54,7 @@ const MerchPage = () => {
         </StyledImage>{" "}
       </ProductContainer>
       <ProductContainer>
-        <h2>Ženska majica 2B - 10€</h2>
+        <h2>Ženska majica 2B - 12€</h2>
         <StyledImage>
           <Img
             fluid={femaleShirt.image.fluid}
@@ -64,7 +64,7 @@ const MerchPage = () => {
         </StyledImage>{" "}
       </ProductContainer>
       <ProductContainer>
-        <h2>Značka z logom 2B - 5€</h2>
+        <h2>Značka z logom 2B - 4€</h2>
         <StyledImage>
           <Img
             fluid={badge.image.fluid}
@@ -73,18 +73,23 @@ const MerchPage = () => {
           />
         </StyledImage>{" "}
       </ProductContainer>
-      <p>Majice so na voljo v velikostih XS, S, M, L in XL.</p>
+      <h2>Paket - majica + značka - 15 eur</h2>
+      <br />
+      <p>Majice so na voljo v velikostih:</p>
+      <p>Ženska S, M</p>
+      <p>Moška M, L, XL</p>
+      <br />
       <p>
         V polje spodaj vpiši katere izdelke želiš naročiti, v kateri velikosti
         in količino (npr: "1x XL Moška majica, 1x S Ženska majica, 2x značka")
       </p>
+      <br />
+      <p>POŠTNINA JE ŽE VKLJUČENA V CENO!</p>
       <p>
-        Po sprejetem naročilu ti pošljemo račun po predračunu in pošljemo
-        naročeno!
+        Če imaš kakšno pohvalo, željo ali pripombo, jo kar dopiši! Hvala za
+        podporo! 2B :)
       </p>
       <br />
-      <p>Če imaš kakšno pohvalo, željo ali pripombo, se je ne boj dopisati!</p>
-      <p>Hvala za podporo! -2B</p>
       <div className="form-segment">
         {/* Renders confirmation component when mail is sent*/}
         {!formStatus.statusCode ? (
@@ -93,7 +98,6 @@ const MerchPage = () => {
           <MailConfirmation formStatus={formStatus} />
         )}
       </div>
-
       <Link to="/">
         <StyledButton>
           <h1>nazaj</h1>
@@ -129,6 +133,10 @@ const Wrapper = styled.div`
   width: 90vw;
   margin: 8rem auto;
   text-align: center;
+
+  h2 {
+    color: ${({ theme }) => theme.gold[500]};
+  }
 
 
   ${TitleText} {

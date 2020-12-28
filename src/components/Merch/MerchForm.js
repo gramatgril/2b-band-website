@@ -99,7 +99,7 @@ const MerchForm = () => {
               id="prder"
               autoComplete="off"
               required="required"
-              placeholder="1x Moška majica XL, 2x ženska majica S, 2x značka"
+              placeholder="1x XL Moška majica, 1x S Ženska majica, 2x značka, ali 1X paket"
             />
           </div>
 
