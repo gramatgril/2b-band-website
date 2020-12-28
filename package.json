@@ -26,7 +26,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "react-hook-form": "^3.28.1",
+    "react-hook-form": "^6.13.0",
     "react-icons": "^3.8.0",
     "react-images": "^1.0.0",
     "react-modal": "^3.11.1",

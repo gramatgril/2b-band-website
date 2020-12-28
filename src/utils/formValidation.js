@@ -17,3 +17,9 @@ export const messageValidation = {
   minLength: { value: 8, message: "Sporočilo naj ima vsaj 8 znakov" },
   maxLength: { value: 250, message: "Sporočilo naj nima več kot 250 znakov" },
 };
+
+export const addressValidation = {
+  required: "Naslov manjka",
+  minLength: { value: 8, message: "Sporočilo naj ima vsaj 8 znakov" },
+  maxLength: { value: 250, message: "Sporočilo naj nima več kot 250 znakov" },
+};

@@ -32,7 +32,8 @@ export const navLinks = [
   },
   {
     id: 5,
-    path: "https://open.spotify.com/artist/7B6CZC5KPxMr6raCoSjoqv",
+    path:
+      "https://open.spotify.com/artist/1QuXKNeGI133xFeLeODbb8?si=oSFCyf0qTYOSlF7_iwWx-Q",
     icon: <FaSpotify className="icon" />,
   },
   {

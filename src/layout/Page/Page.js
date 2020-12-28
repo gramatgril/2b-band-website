@@ -11,16 +11,18 @@ import Newsletter from "../../components/Newsletter";
 import PromotedVideo from "./../../components/PromotedVideo";
 import TourDates from "./../../components/TourDates";
 import Welcome from "../../components/Welcome";
+import MerchSection from "../../components/Merch";
 
 const Page = () => {
   return (
     <Wrapper>
       <Header />
       <Welcome />
-      <PromotedVideo videoId={"ga0Sj9kGBuo"} />
-      <PromotedVideo videoId={"dgojswYx4X4"} />
-      <Newsletter />
+      {/* <PromotedVideo videoId={"ga0Sj9kGBuo"} /> */}
+      {/* <PromotedVideo videoId={"dgojswYx4X4"} /> */}
+      <MerchSection />
       <TourDates />
+      <Newsletter />
       {/* <Newsletter /> */}
       <Discography />
       <About />
