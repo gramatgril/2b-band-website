@@ -23,33 +23,22 @@ const path = "http://localhost:9000/sendMail";
 // const path = "";
 
 const ContactForm = ({ setFormStatus }) => {
-  const { register, handleSubmit, errors } = useForm({ mode: "onBlur" });
+  const { register, errors } = useForm({ mode: "onBlur" });
 
-  const onSubmit = async (data, e) => {
-    // Honeypot break
-    if (data.phone) return;
-
-    try {
-      // Sends data to server
-      const res = await fetch(path, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      // Defaults input fields to empty
-      e.target.reset();
-
-      // Parses response
-      const { msg } = await res.json();
-
-      console.log(`Status: ${msg} - ${res.status}`);
-      setFormStatus({ statusCode: res.status, msg });
-    } catch (error) {
-      console.log(error);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
   };
 
   return (
@@ -57,7 +46,7 @@ const ContactForm = ({ setFormStatus }) => {
       <form
         className="form"
         name="contact"
-        // onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit}
         method="POST"
         data-netlify="true"
       >
