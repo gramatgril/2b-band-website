@@ -54,6 +54,7 @@ const ContactForm = ({ setFormStatus }) => {
         name="contact"
         onSubmit={handleSubmit}
         method="POST"
+        action="/thanks/"
         data-netlify="true"
       >
         <FormField>
