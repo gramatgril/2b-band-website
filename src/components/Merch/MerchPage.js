@@ -32,12 +32,35 @@ const query = graphql`
         }
       }
     }
+    combo: file(relativePath: { eq: "2bcombo.jpg" }) {
+      image: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cd1: file(relativePath: { eq: "2bcd1.jpg" }) {
+      image: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cd2: file(relativePath: { eq: "2bcd2.jpg" }) {
+      image: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 
 const MerchPage = () => {
   const [formStatus, setFormStatus] = useState({ statusCode: null, msg: "" });
-  const { badge, maleShirt, femaleShirt } = useStaticQuery(query);
+  const { badge, maleShirt, femaleShirt, combo, cd1, cd2 } = useStaticQuery(
+    query
+  );
   return (
     <Wrapper>
       <TitleText>
@@ -72,8 +95,37 @@ const MerchPage = () => {
             imgStyle={{ objectFit: "contain" }}
           />
         </StyledImage>{" "}
+      </ProductContainer>{" "}
+      <ProductContainer>
+        <h2>Paket - majica + značka - 15€</h2>
+        <StyledImage>
+          <Img
+            fluid={combo.image.fluid}
+            className="img"
+            imgStyle={{ objectFit: "contain" }}
+          />
+        </StyledImage>{" "}
+      </ProductContainer>{" "}
+      <ProductContainer>
+        <h2>Album b2 - 12€</h2>
+        <StyledImage>
+          <Img
+            fluid={cd1.image.fluid}
+            className="img"
+            imgStyle={{ objectFit: "contain" }}
+          />
+        </StyledImage>{" "}
+      </ProductContainer>{" "}
+      <ProductContainer>
+        <h2>Album Koromandija - 12€</h2>
+        <StyledImage>
+          <Img
+            fluid={cd2.image.fluid}
+            className="img"
+            imgStyle={{ objectFit: "contain" }}
+          />
+        </StyledImage>{" "}
       </ProductContainer>
-      <h2>Paket - majica + značka - 15 eur</h2>
       <br />
       <p>Majice so na voljo v velikostih:</p>
       <p>Ženska S, M</p>
@@ -116,7 +168,7 @@ const ProductContainer = styled.div`
   flex-direction: column;
   row-gap: 0.5rem;
   color: ${({ theme }) => theme.gold[500]};
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 `;
 
 const StyledImage = styled.div`
