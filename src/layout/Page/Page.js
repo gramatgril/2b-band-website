@@ -18,9 +18,9 @@ const Page = () => {
     <Wrapper>
       <Header />
       <Welcome />
+      <MerchSection />
       <PromotedVideo videoId={"ga0Sj9kGBuo"} />
       <PromotedVideo videoId={"dgojswYx4X4"} />
-      <MerchSection />
       <TourDates />
       <Newsletter />
       {/* <Newsletter /> */}

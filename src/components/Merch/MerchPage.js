@@ -61,10 +61,41 @@ const MerchPage = () => {
   const { badge, maleShirt, femaleShirt, combo, cd1, cd2 } = useStaticQuery(
     query
   );
+
+  const albums = {
+    koromandija: [
+      "Viniško Nebo",
+      "Daj srce",
+      "Antidot",
+      "Nasvet",
+      "Drama",
+      "Nazaj",
+      "V strugi",
+      "Midva sva",
+      "Don Kihot",
+      "Mraz",
+      "Bonaca",
+      "Sonce",
+      "Privid (Bonus)",
+    ],
+    b2: [
+      "Iz zime v pomlad",
+      "Jutro",
+      "Seme in plevel",
+      "Kraljica glavnih vlog",
+      "Tvoja sreča",
+      "Zgled",
+      "Gledam naprej",
+      "Figure v škatlah",
+      "Na črnem ozadju",
+      "Zabluran svet",
+    ],
+  };
+
   return (
     <Wrapper>
       <TitleText>
-        <h1>MERCH</h1>
+        <h1>URADNA SPLETNA TRGOVINA</h1>
       </TitleText>
       <ProductContainer>
         <h2>Moška majica 2B - 12€</h2>
@@ -75,6 +106,7 @@ const MerchPage = () => {
             imgStyle={{ objectFit: "contain" }}
           />
         </StyledImage>{" "}
+        <p>Moška majica – 100% bombaž, na voljo v (M), (L) in (XL) velikosti</p>
       </ProductContainer>
       <ProductContainer>
         <h2>Ženska majica 2B - 12€</h2>
@@ -85,6 +117,7 @@ const MerchPage = () => {
             imgStyle={{ objectFit: "contain" }}
           />
         </StyledImage>{" "}
+        <p>Ženska majica - 100 % bombaž, na voljo v (S) in (M) velikosti</p>
       </ProductContainer>
       <ProductContainer>
         <h2>Značka z logom 2B - 4€</h2>
@@ -115,6 +148,14 @@ const MerchPage = () => {
             imgStyle={{ objectFit: "contain" }}
           />
         </StyledImage>{" "}
+        <div className="album">
+          {albums &&
+            albums.b2.map((song, i) => (
+              <div className="song" key={song}>
+                {i + 1}. {song}
+              </div>
+            ))}
+        </div>
       </ProductContainer>{" "}
       <ProductContainer>
         <h2>Album Koromandija - 12€</h2>
@@ -125,6 +166,14 @@ const MerchPage = () => {
             imgStyle={{ objectFit: "contain" }}
           />
         </StyledImage>{" "}
+        <div className="album">
+          {albums &&
+            albums.koromandija.map((song, i) => (
+              <div className="song" key={song}>
+                {i + 1}. {song}
+              </div>
+            ))}
+        </div>
       </ProductContainer>
       <br />
       <p>Majice so na voljo v velikostih:</p>
