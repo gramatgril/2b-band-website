@@ -9,26 +9,30 @@ const About = () => {
     <Wrapper>
       <div className="overlay">
         <div className="content">
-          <SectionTitle title="kdo sva" />
+          <SectionTitle title="2b sta" />
           <ContentGrid>
             <LeftColumn>
               <TextContainer>
                 <p>
-                  <span>2B</span> je ime glasbenega dvojca bratov Gašperja in
-                  Primoža, ki ste ju zadnje mesece lahko bolje spoznali po
-                  skladbah <span>»Najini koraki«</span> ter{" "}
-                  <span>»Kot morje«</span> (nagrada na MMS 2019).
+                  Glasbeno zasedbo 2B sestavljata brata Gašper in Primož
+                  Mihelič, nadarjena glasbenika, ki svoje spevne melodije
+                  združujeta predvsem z elektro pop zvrstjo, v kateri sta našla
+                  svežo energijo in zagon. Prvo skladbo njune samostojne
+                  glasbene poti – »Najini koraki« – so mnoge radijske postaje
+                  prepoznale kot spremljevalko pomladi 2019 in jo sčasoma
+                  vzpostavile kot prikupen radijski hit.
                 </p>
               </TextContainer>
               <TextContainer>
                 <p>
-                  <span>Gašper</span> in <span>Primož</span> svoje spevne
-                  melodije združujeta predvsem z electric organic zvrstjo, v
-                  kateri sta našla svežo energijo in zagon. Prvo skladbo njune
-                  samostojne glasbene poti – <span>»Najini koraki«</span> – so
-                  mnoge radijske postaje prepoznale kot spremljevalko
-                  lanskoletne pomladi in jo sčasoma vzpostavile kot prikupen
-                  radijski hit.
+                  2B na novi glasbeni poti žanjeta uspeh za uspehom. S prvim
+                  singlom Najini koraki sta osvojila radijske postaje in požela
+                  velik odziv s strani oboževalcev, drugi singl Kot morje, ki
+                  sta ga premierno predstavila na odmevnem festivalu Melodije
+                  morja in sonca, jima je prinesel nagrado Danila Kocjančiča za
+                  najbolj obetavna avtorja in izvajalca, s tretjo skladbo Ko bi
+                  jaz pa sta se predstavila na Popevki in si prislužila odličnem
+                  odziv publike, ki jima je namenila nemalo glasov.
                 </p>
               </TextContainer>
             </LeftColumn>
@@ -36,23 +40,28 @@ const About = () => {
             <RightColumn>
               <TextContainer>
                 <p>
-                  V preteklosti ste <span>2B</span> tako lahko slišali že na
-                  velikih festivalskih odrih Schengenfesta in Urbanega Dejanja
-                  kot tudi v dvoranah Cankarjevega doma in Slovenske
-                  filharmonije. Z letošnjim letom <span>Gašper</span> in{" "}
-                  <span>Primož </span>svojo glasbeno pot nadaljujeta kot
-                  prenovljen duet, na njunih nastopih pa ob novih skladbah lahko
-                  slišite tudi marsikatere odmeve njihovih prvih dveh albumov (
-                  <span>B2</span> in <span>Koromandija</span>).
+                  V letu 2020 se kljub situaciji z korono, nista nič ustavila,
+                  ampak delala naprej, ter svoje koncerte preselila na splet in
+                  imela več uspešnih livestream dogodkov. Uspela sta tudi
+                  nanizati, kar tri nove single, &quot;Kje so rože&quot; ki je
+                  postala najbolj predvajana skladba na Valu 202 in tudi popevka
+                  tedna. Sledila je &quot;Pastirče mlado 2020&quot; ki sta jo
+                  fanta posnela v času epidemije in z njo navdušila preko
+                  250.000 poslušalev in gledalcev, ki si je ogledalo njun
+                  posnetek iz balkona. Kasneje sta skladbo izdala tudi v
+                  studijski verziji in jo izdala kot singl.
                 </p>
               </TextContainer>
               <TextContainer>
                 <p>
-                  Novi album pričakujemo 2020, na njem pa bosta{" "}
-                  <span>Gašper</span> in <span>Primož</span> predstavila tisto,
-                  kar ju neizbrisno povezuje: skromnost ter strast do
-                  ustvarjanja sodobne, čustvene, rahlo zasanjane in izrazito
-                  optimistične glasbe.
+                  V jesen sta vstopila z nežno in čutno balado &quot;Čez
+                  telo&quot; ki je prav tako kot druge njune skladbe, požela
+                  odličen odziv občinstva. Vendar 2B nista popolna novinca! Pod
+                  imenom 2B so se dolga leta skrivali kar trije bratje Mihelič.
+                  V preteklosti ste 2B tako lahko slišali že na velikih
+                  festivalskih odrih Schengenfesta in Urbanega Dejanja kot tudi
+                  v dvoranah Cankarjevega doma, Slovenske filharmonije in
+                  številnih klubov po Sloveniji.
                 </p>
               </TextContainer>
             </RightColumn>

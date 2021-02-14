@@ -12,6 +12,7 @@ import PromotedVideo from "./../../components/PromotedVideo";
 import TourDates from "./../../components/TourDates";
 import Welcome from "../../components/Welcome";
 import MerchSection from "../../components/Merch";
+import ChordsSection from "./../../components/Merch/ChordsSection";
 
 const Page = () => {
   return (
@@ -25,9 +26,10 @@ const Page = () => {
       <Newsletter />
       {/* <Newsletter /> */}
       <Discography />
+      <ChordsSection />
       <About />
-      <Booking />
       <Gallery />
+      <Booking />
     </Wrapper>
   );
 };

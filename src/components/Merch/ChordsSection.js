@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-const MerchSection = () => {
+const ChordsSection = () => {
   return (
     <Wrapper>
       <Grid>
         <Title>
-          <h1>Uradna spletna trgovina 2B</h1>
+          <h1>2B KOMADI Z BESEDILI IN AKORDI</h1>
         </Title>
-        <Button to="/merch/">Vstopi</Button>
+        <Button
+          href="https://zabrenkaj.si/2b"
+          target="_blank"
+          rel="noopener norefferer"
+        >
+          Vstopi
+        </Button>
         {/* <Button to="/merch">Vstopi</Button> */}
       </Grid>
     </Wrapper>
   );
 };
 
-export default MerchSection;
+export default ChordsSection;
 
 const Grid = styled.div``;
 const Title = styled.div``;
-const Button = styled(Link)``;
+const Button = styled.a``;
 
 const Wrapper = styled.section`
   background: ${({ theme }) => theme.red[500]};
