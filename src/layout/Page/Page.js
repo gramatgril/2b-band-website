@@ -20,8 +20,7 @@ const Page = () => {
       <Header />
       <Welcome />
       <MerchSection />
-      <PromotedVideo videoId={"ga0Sj9kGBuo"} />
-      <PromotedVideo videoId={"dgojswYx4X4"} />
+      <PromotedVideo videoId={"u5gPslKuAMY"} />
       <TourDates />
       <Newsletter />
       {/* <Newsletter /> */}
