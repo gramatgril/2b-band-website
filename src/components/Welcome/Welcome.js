@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 
 const getImages = graphql`
   {
-    desktopImage: file(relativePath: { eq: "2b-bcg8.jpg" }) {
+    desktopImage: file(relativePath: { eq: "2bmain.jpg" }) {
       image: childImageSharp {
         fluid(quality: 90, maxWidth: 1980) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
