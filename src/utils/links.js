@@ -42,4 +42,14 @@ export const navLinks = [
       "https://www.deezer.com/en/artist/1885041?app_id=140685&utm_source=lf&utm_content=dc1e0af90d54ab9fb7370309145bb436",
     icon: <i className="cib-deezer icon"></i>,
   },
+  {
+    id: 5,
+    path: "https://2bband.bandcamp.com/",
+    icon: <FaBandcamp className="icon" />,
+  },
+  {
+    id: 6,
+    path: "https://soundcloud.com/glasbena-skupina-2b",
+    icon: <FaSoundcloud className="icon" />,
+  },
 ];
