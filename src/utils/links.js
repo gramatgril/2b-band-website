@@ -31,24 +31,24 @@ export const navLinks = [
     icon: <FaYoutube className="icon" />,
   },
   {
-    id: 5,
+    id: 4,
     path:
-      "https://open.spotify.com/artist/1QuXKNeGI133xFeLeODbb8?si=oSFCyf0qTYOSlF7_iwWx-Q",
+      "https://open.spotify.com/artist/5W4QkA1mEehyEUZpA9vmcW",
     icon: <FaSpotify className="icon" />,
   },
   {
-    id: 4,
+    id: 5,
     path:
-      "https://www.deezer.com/en/artist/1885041?app_id=140685&utm_source=lf&utm_content=dc1e0af90d54ab9fb7370309145bb436",
+      "https://deezer.page.link/tWXyNtuasxtrpudW9",
     icon: <i className="cib-deezer icon"></i>,
   },
   {
-    id: 5,
+    id: 6,
     path: "https://2bband.bandcamp.com/",
     icon: <FaBandcamp className="icon" />,
   },
   {
-    id: 6,
+    id: 7,
     path: "https://soundcloud.com/glasbena-skupina-2b",
     icon: <FaSoundcloud className="icon" />,
   },
