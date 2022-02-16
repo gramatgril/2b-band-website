@@ -15,7 +15,7 @@ const About = () => {
               <p>
                 2B sva neutrudljiva sodobna romantika, ujetnika elektronske
                 glasbe prepletene z organskimi zvoki, ki se skriva pod etiketo
-                #electricorgnic. Bratski dvojec, ki je ustvaril radijske hite
+                #electricorganic. Bratski dvojec, ki je ustvaril radijske hite
                 “Najini koraki” Kje so rože”, “Čez telo”, “Kot morje”,
                 “Nevihte”. V preteklosti sva že večkrat jadrala kot popevka
                 tedna na valovih Vala 202, priplezala na sam vrh nekaterih
