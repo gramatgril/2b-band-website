@@ -6,14 +6,14 @@ import Img from "gatsby-image";
 
 const getImages = graphql`
   {
-    desktopImage: file(relativePath: { eq: "naslovna.jpg" }) {
+    desktopImage: file(relativePath: { eq: "2b-v-lekarni.jpg" }) {
       image: childImageSharp {
         fluid(quality: 90, maxWidth: 1980) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
-    mobileImage: file(relativePath: { eq: "naslovna.jpg" }) {
+    mobileImage: file(relativePath: { eq: "2b-v-lekarni.jpg" }) {
       image: childImageSharp {
         fluid(quality: 90, maxWidth: 576) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
