@@ -29,11 +29,16 @@ const TourDates = () => {
       <div className="overlay">
         <div className="content">
           <SectionTitle title="2b na odrih" />
-          <TourDatesGrid>
+          <h2 className="no-gig">
+            HEJ, TRENUTNO SVA V FAZI BOOKIRANJA KONCERTNIH DATUMOV, KMALU JIH
+            OBJAVIVA TU, PRIDI NAZAJ ČEZ DAN ALI DVA, DO TAKRAT SI PA ZAVRTI KAK
+            2B KOMAD ;)
+          </h2>
+          {/* <TourDatesGrid>
             {allShows.edges.map(({ node }) => (
               <TourCard key={node.id} show={node} />
             ))}
-          </TourDatesGrid>
+          </TourDatesGrid> */}
         </div>
       </div>
     </Wrapper>
@@ -62,6 +67,10 @@ const Wrapper = styled.section`
 
   .content {
     padding: 5rem 0;
+  }
+
+  .no-gig {
+    color: ${({ theme }) => theme.gold[500]};
   }
 
   ${TourDatesGrid} {
