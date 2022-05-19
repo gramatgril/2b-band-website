@@ -24,25 +24,37 @@ const getTourDates = graphql`
 const TourDates = () => {
   const { allShows, band } = useStaticQuery(getTourDates);
 
-  return (
-    <Wrapper>
-      <div className="overlay">
-        <div className="content">
-          <SectionTitle title="2b na odrih" />
-          <h2 className="no-gig">
-            HEJ, TRENUTNO SVA V FAZI BOOKIRANJA KONCERTNIH DATUMOV, KMALU JIH
-            OBJAVIVA TU, PRIDI NAZAJ ČEZ DAN ALI DVA, DO TAKRAT SI PA ZAVRTI KAK
-            2B KOMAD ;)
-          </h2>
-          {/* <TourDatesGrid>
-            {allShows.edges.map(({ node }) => (
-              <TourCard key={node.id} show={node} />
-            ))}
-          </TourDatesGrid> */}
+  if (allShows.edges.map.length) {
+    return (
+      <Wrapper>
+        <div className="overlay">
+          <div className="content">
+            <SectionTitle title="2b na odrih" />
+            <TourDatesGrid>
+              {allShows.edges.map(({ node }) => (
+                <TourCard key={node.id} show={node} />
+              ))}
+            </TourDatesGrid>
+          </div>
         </div>
-      </div>
-    </Wrapper>
-  );
+      </Wrapper>
+    );
+  } else {
+    return (
+      <Wrapper>
+        <div className="overlay">
+          <div className="content">
+            <SectionTitle title="2b na odrih" />
+            <h2 className="no-gig">
+              HEJ, TRENUTNO SVA V FAZI BOOKIRANJA KONCERTNIH DATUMOV, KMALU JIH
+              OBJAVIVA TU, PRIDI NAZAJ ČEZ DAN ALI DVA, DO TAKRAT SI PA ZAVRTI
+              KAK 2B KOMAD ;)
+            </h2>
+          </div>
+        </div>
+      </Wrapper>
+    );
+  }
 };
 
 export default TourDates;
