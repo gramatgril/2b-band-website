@@ -98,7 +98,7 @@ const MerchPage = () => {
         <h1>URADNA SPLETNA TRGOVINA</h1>
       </TitleText>
       <ProductContainer>
-        <h2>Moška majica 2B - 12€</h2>
+        <h2>Moška majica 2B - 15€</h2>
         <StyledImage>
           <Img
             fluid={maleShirt.image.fluid}
@@ -109,7 +109,7 @@ const MerchPage = () => {
         <p>Moška majica – 100% bombaž, na voljo v (M), (L) in (XL) velikosti</p>
       </ProductContainer>
       <ProductContainer>
-        <h2>Ženska majica 2B - 12€</h2>
+        <h2>Ženska majica 2B - 15€</h2>
         <StyledImage>
           <Img
             fluid={femaleShirt.image.fluid}
@@ -130,7 +130,7 @@ const MerchPage = () => {
         </StyledImage>{" "}
       </ProductContainer>{" "}
       <ProductContainer>
-        <h2>Paket - majica + značka - 15€</h2>
+        <h2>Paket - majica + značka - 18€</h2>
         <StyledImage>
           <Img
             fluid={combo.image.fluid}
@@ -275,7 +275,5 @@ const Wrapper = styled.div`
 
   @media (min-width: 1200px) {
     width: 40vw;
-  }¸
-
-
-`;
+  }
+`
