@@ -140,7 +140,7 @@ const MerchPage = () => {
         </StyledImage>{" "}
       </ProductContainer>{" "}
       <ProductContainer>
-        <h2>Album b2 - 12€</h2>
+        <h2>Album b2 - 15€</h2>
         <StyledImage>
           <Img
             fluid={cd1.image.fluid}
@@ -158,7 +158,7 @@ const MerchPage = () => {
         </div>
       </ProductContainer>{" "}
       <ProductContainer>
-        <h2>Album Koromandija - 12€</h2>
+        <h2>Album Koromandija - 15€</h2>
         <StyledImage>
           <Img
             fluid={cd2.image.fluid}
