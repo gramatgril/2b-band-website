@@ -13,19 +13,25 @@ const About = () => {
           <ContentGrid>
             <TextContainer>
               <p>
-                2B sva neutrudljiva sodobna romantika, ujetnika elektronske
-                glasbe prepletene z organskimi zvoki, ki se skriva pod etiketo
-                #electricorganic. Bratski dvojec, ki je ustvaril radijske hite
-                “Najini koraki” Kje so rože”, “Čez telo”, “Kot morje”,
-                “Nevihte”. V preteklosti sva že večkrat jadrala kot popevka
-                tedna na valovih Vala 202, priplezala na sam vrh nekaterih
-                Slovenskih in tudi tujih radijskih lestvic, se pojavila na dveh
-                velikih odrih festivalov Slovenska popevka in MMS, na slednjem
-                sva tudi zmagala v kategoriji za nagrado Danila Kocjančiča, za
-                najbolj obetavnega avtorja in izvajalca. Obožujeva koncerte in
-                to da sva na odru. Nikoli nisva jemala glasbe, samo kot hobi,
-                ampak kot način življenja, silo, ki naju poganja in sredstvo za
-                izražanje svojih občutkov.
+                2B sva bratski dvojec, Gašper in Primož Mihelič. Ustvarjava
+                mešanico elektro popa, s primesmi indie elektronike in deep
+                housa, sestavljeno v električno-organski slog(#electricorganic)
+                ki najbolje izraža najina čustva in emocije. Želiva, da bi
+                poslušalce pripeljala v svet, kjer lahko sprostijo svoj um in
+                telo, in jih hkrati inspirirala, da se ne ustavijo pri sanjanju,
+                ampak svoje sanje in cilje uresničijo.
+              </p>
+            </TextContainer>
+            <TextContainer>
+              <p>
+                2B pesmi se redno vrtijo na nacionalnih radijskih postajah, kot
+                so Val 202, Radio Koper, Radio Maribor, Radio SI in številnih
+                drugih. Oder je najin dom, glasba pa najin trans, in to je
+                tisto, kar naju drži in nosi naprej. Nastopava na koncertnih
+                prizoriščih po vsej Sloveniji, z energično izvedbo in
+                avtentičnim stilom. Trudiva se, da publiki zmeraj ponudiva nekaj
+                svežega in novega. Zmeraj iščeva inovatinost, ki naju skozi
+                eksperimentiranje, vedno znova pripelje do novih dimenzij.
               </p>
             </TextContainer>
           </ContentGrid>

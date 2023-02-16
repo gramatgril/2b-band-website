@@ -19,10 +19,7 @@ const Booking = () => {
     <Wrapper>
       <Grid>
         <Title>
-          <h1>booking in Press kit</h1>
-          <h2>
-            Klikni za povezavo do <a href={data.file.publicURL}>press kita</a>.
-          </h2>
+          <h1>Booking</h1>
         </Title>
         <Contacts>
           <Email>
